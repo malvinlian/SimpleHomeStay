@@ -1,0 +1,412 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The HomeStay</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+  </head>
+
+  <body>
+
+
+    <!-- ===================================== Page Content ===================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle">
+  <a class="navbar-brand navStyle1" href="#">The HomeStay</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav text-center">
+      <a class="nav-item nav-link navStyle2" href="{% url 'Room:Roompage' %}">The Room <span class="sr-only">(current)</span></a>
+      <hr class="style3">
+      <a class="nav-item nav-link navStyle2" href="#facility">The Facility</a>
+      <hr class="style3">
+      <a class="nav-item nav-link navStyle2" href="#direction">Getting Here</a>
+      <hr class="style3">
+      <a class="nav-item nav-link navStyle2" href="#promotion">The Promotion</a>
+      <hr class="style3">
+      <a class="nav-item nav-link navStyle2" href="#gallery">The Gallery</a>
+      <hr class="style3">
+      <a class="nav-item nav-link navStyle2" href="#contact">Contact Us</a>
+      <hr class="style3">
+    </div>
+  </div>
+</nav>
+
+<div class="container d-none d-lg-block text-center">
+
+      <h1 class="h1Style">THE HOMESTAY</h1>
+
+    </div><!-- end h1 container -->
+
+    <div class="d-none d-lg-block">
+
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="{% url 'Room:Roompage' %}">Room<i class="fas fa-grip-lines-vertical"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#facility">Facility<i class="fas fa-grip-lines-vertical"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#direction">Getting Here<i class="fas fa-grip-lines-vertical"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#promotion">The Promotion<i class="fas fa-grip-lines-vertical"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#gallery">Gallery<i class="fas fa-grip-lines-vertical"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#contact">Contact Us</a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <div class="container-fluid homeContainerStyle">
+
+{% for info in info %}
+      <div class="card homeCrdStyle roomCrdStyle">
+        <div class="card-body text-right">
+
+            <h1 id="room" class="crdH1Style">Long Lellang</h1>
+
+          <div class="row">
+
+            <div class="col-md-5">
+              <br>
+              <p>{{info.message1}}</p>
+              <p><i class="fas fa-grip-lines-vertical"></i> Check in Time: {{info.check_in}} <i class="fas fa-grip-lines-vertical"></i></p>
+              <p><i class="fas fa-grip-lines-vertical"></i> Check out Time: {{info.check_out}} <i class="fas fa-grip-lines-vertical"></i></p>
+              <a href="{% url 'Room:Roompage' %}" class="btn btn-secondary">Book now</a>
+            </div>
+
+            <div class="col-md-7 crdFtStyle1">
+              <p class="crdFont1">Click for gallery</p>
+              <a href="{{info.image1.url}}" data-toggle="lightbox" data-max-width="600" data-gallery="example-gallery">
+                  <img data-src="{{info.image1.url}}" class="img-fluid lazyload">
+              </a>
+              <br>
+            </div>
+
+          </div><!-- end row -->
+
+        </div>
+      </div><!-- end card -->
+
+
+    </div><!-- end The Room container -->
+
+    <div class="container-fluid homeContainerStyle">
+
+
+      <div class="card homeCrdStyle facilityCrdStyle">
+        <div class="card-body">
+          <br>
+          <h1 id="facility" class="crdH1Style">The Facility</h1>
+          <p>Check our wide selection of rooms. Lorem ipsum this a test text. Check our wide selection of rooms. Lorem ipsum this a test text.</p>
+          <p class="crdFont1">Our Facilities:</p>
+
+          <div class="row crdFtStyle">
+            <div class="col-sm-6">
+              <p><i class="fas fa-3x fa-utensils px-3 py-1"></i>BBQ Area</p>
+              <p><i class="fas fa-3x fa-warehouse px-3 py-3"></i>Hall Rental</p>
+              <p><i class="fas fa-3x fa-swimming-pool px-3 py-3"></i>Swimming Pool</p>
+              <p><i class="fas fa-3x fa-wifi px-3 py-3"></i>Internet</p>
+              <p><i class="fas fa-3x fa-hiking px-3 py-3"></i>Outdoor Activity</p>
+            </div>
+
+            <div class="col-sm-6">
+              <p><i class="fas fa-3x fa-mitten px-3 py-3"></i>Home Cook</p>
+              <p><i class="fas fa-3x fa-swimmer px-3 py-3"></i>Outdoor Swimming</p>
+              <p><i class="fas fa-3x fa-tree px-3 py-3"></i>Nature Guide</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div><!-- end The facility container -->
+
+    <div class="container-fluid homeContainerStyle">
+
+
+      <div class="card homeCrdStyle wayCrdStyle">
+        <div class="card-body text-right">
+          <br>
+          <h1 id="direction" class="crdH1Style">The Way Here</h1>
+          <p>Below are our location, and some information on how to get here. Please do your reservation before hand for airfares and such.</p>
+          <p class="crdFont1">Location:</p>
+            <li>Long Lellang, Sarawak, Malaysia</li>
+          <p>Flying Here:</p>
+            <li>Fly to Kuala Lumpur international Airport (KLIA)</li>
+            <li>Take a flight from KLIA to Miri Airport</li>
+            <li>Another flight from Miri to Long Lellang</li>
+          <br>
+          <a style="color: black;" href="#"><i class="fas fa-4x fa-map-marked-alt py-3 px-3"></i></a>
+          <a style="color: black;" href="#"><i class="fas fa-4x fa-map py-3 px-3"></i></a>
+          <a style="color:black;" href="#"><i class="fas fa-4x fa-street-view py-3 px-3"></i></a>
+
+        </div>
+      </div>
+
+
+    </div><!-- end The way container -->
+
+    <div class="container-fluid homeContainerStyle">
+
+  <br>
+  <h1 class="crdH1Style pl-3">Promotions</h1>
+
+  <div class="card-group">
+
+    <div class="card">
+
+      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
+      <div class="card-body">
+        <h2>Promo</h2>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+    <div class="card">
+
+      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
+      <div class="card-body">
+        <h2>Promo</h2>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+    <div class="card">
+
+      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
+      <div class="card-body">
+        <h2>Promo</h2>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+    <br>
+
+  </div><!-- card-group -->
+
+
+</div><!-- end Promotion container -->
+
+    <div class="container-fluid homeContainerStyle">
+
+        <div class="card galleryCrdStyle">
+
+            <div class="card-body">
+            <br>
+              <h1 id="gallery" class="crdH1Style">The Gallery</h1>
+              <p class="crdFont1">Click to view</p>
+
+                      <div class="row">
+                        <div class="col-md-4">
+
+                          <a href="{{info.gallery1.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img data-src="{{info.gallery1.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                          </a>
+
+                        </div>
+                          <div class="col-md-4">
+
+                          <a href="{{info.gallery2.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img data-src="{{info.gallery2.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                          </a>
+
+                          </div>
+                          <div class="col-md-4">
+
+                          <a href="{{info.gallery3.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img data-src="{{info.gallery3.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                          </a>
+
+                          </div>
+
+                      </div>
+                      <div class="row">
+
+                        <div class="col-md-4 d-none d-md-block">
+
+                        <a href="{{info.gallery4.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img data-src="{{info.gallery4.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                          </a>
+
+                        </div>
+                          <div class="col-md-4 d-none d-md-block">
+
+                          <a href="{{info.gallery5.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img data-src="{{info.gallery5.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                          </a>
+                          </div>
+                          <div class="col-md-4 d-none d-md-block">
+
+                          <a href="{{info.gallery6.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img data-src="{{info.gallery6.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                          </a>
+                          </div>
+                      </div>
+
+            </div>
+            <br>
+        </div><!-- end card -->
+
+    </div><!-- end Gallery container -->
+
+
+    <div class="container-fluid homeContainerStyle">
+
+      <div class="card homeCrdStyle numCrdStyle nbrCrdStyle">
+        <div class="card-body text-right">
+          <br>
+          <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
+          <br>
+          <p><i class="fas fa-money-check-alt"></i> Name: {{info.name}}</p>
+          <p><i class="fas fa-phone"></i> Tel: {{info.phone_number}}</p>
+          <p><i class="fas fa-mobile-alt"></i> Tel: {{info.office_number}}</p>
+          <p><i class="fas fa-envelope"></i> Email: {{info.email}}</p>
+          <a href="#">FAQ</a>
+          <br>
+
+          <i class="fab fa-3x fa-twitter-square px-3 py-3"></i>
+          <i class="fab fa-3x fa-facebook px-3 py-3"></i>
+          <i class="fab fa-3x fa-foursquare px-3 py-3"></i>
+          <i class="fab fa-3x fa-instagram px-3 py-3"></i>
+
+        </div>
+      </div>
+
+
+    </div><!-- end Contact Us container -->
+{% endfor %}
+
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link navStyle" href="#room">Room</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navStyle" href="#facility">Facility</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navStyle" href="#gallery">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navStyle" href="#direction">Getting Her</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navStyle" href="#contact">Contact Us</a>
+      </li>
+    </ul>
+
+    <!-- ======================================= end page content ============================================= -->
+
+
+        <footer class="text-center pt-3">
+          <ul class="nav justify-content-center">
+            <li class="nav-item p-2 mb-1 bg-white rounded">
+              <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
+            </li>
+            <li class="nav-item p-2 mb-1 bg-white rounded">
+              <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
+            </li>
+            <li class="nav-item p-2 mb-1 bg-white rounded">
+              <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
+            </li>
+          </ul>
+          <p class="my-1 footerFont">Copyright 2019</p>
+          <h6 class="footerFont">Created by MADTechnologies</h6>
+        </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
+    <script src="{% static "js/lazysizes.min.js" %}" async=""></script>
+
+
+
+    <script>
+
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                    event.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+
+    </script>
+
+    <!--
+    _..-...
+   ,Y+  .:.:\_
+  | |./'     ``-\
+  |,'`           `.
+  |               `_
+  |     ,-''-. ,-''':
+  |    /      .'     :                                     ****lian was here****
+  | .\ |    o  |__o.,'                           _.-' '\
+ '|\| \\      /    `)                        ,..,'     ,'
+  |`|  ' `..- .....<:                      ,'    `. ,-:
+  ' ,-   _.-'        `.                 _,'       +'  |
+   |`|  ,'            '.              ,'       - _/_,'-\
+    `.Y|   _,,.. ____./'           ,-'         /'|`'  _|
+      ||  | |  |  | |           _.-              `--+'
+      |-.  "|:.|..|-.    _,.. ,/'               ,..Y'
+      / `\.       ,-'  ,' /,,'               _,'
+     .:_    -----'''|.:   |             _,Y''
+    /  '`'';'.     /:  \  |        _,Y-'
+    |      |  ' .  | `._| |     _,'
+_/-'';.. _ |     ` |   \   `.Y'i'                                           * MadTechnologies Copyright 2018-2019
+,'    ,'    '             |    i/'                                          * MadWorks
+,.'      /                   ..--'
+|       |                     \
+: .     /                      ' .
+/'  `._ .'                         `.
+/     _''                            \
+/     ./                               \
+/      /                                 \
+/      |                                   \
+/     ,'|                                   |
+
+
+    -->
+
+
+  </body>
+
+</html>

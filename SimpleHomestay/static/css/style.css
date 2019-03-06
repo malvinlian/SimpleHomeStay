@@ -83,6 +83,10 @@ L___                              |
   color: purple;
 }
 
+.footerFont {
+  letter-spacing: 0.7rem;
+  padding-bottom: 20px;
+}
 
 /* ===================================================================================================================
 ======================================================================================================================
@@ -96,15 +100,7 @@ L___                              |
 ======================================================================================================================
 =================================================================================================================== */
 
-.carousel-item {
-  height: 100vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 
 /* ===================================================================================================================
@@ -119,11 +115,18 @@ L___                              |
 ======================================================================================================================
 =================================================================================================================== */
 
-.navStyle {
+.navFooterStyle {
   font-size: 2rem;
   background-color: transparent;
-
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.8rem;
+  padding-left: 0.5rem;
+  padding-right: 0.8rem;
+  background-color: grey;
 }
+
+
 
 
 /* ===================================================================================================================
@@ -210,6 +213,21 @@ L___                              |
    background-color: grey;
 }
 
+.navStyle1 {
+  color: purple;
+  letter-spacing: 0.8rem;
+}
+
+.navStyle2 {
+  color: purple;
+  font-size: 1rem;
+  letter-spacing: 0.8rem;
+}
+
+.navBgStyle {
+  background-color: grey;
+
+}
 
 /* ===================================================================================================================
 ======================================================================================================================
@@ -286,9 +304,6 @@ L___                              |
 }
 
 
-/* --------- Gallery  card styling --------- */
-
-
 
 /* ---------  Number Card  Styling --------- */
 @media screen and (min-width: 601px) {
@@ -350,4 +365,20 @@ L___                              |
 
 .numCrdStyle {
   background-image: url("../img/54332bgemeffectbackground.jpg");
+}
+
+
+/*///////////////////////////
+//hr styling
+/////////////////////////*/
+
+
+hr.style3 {
+border: 0;
+height: 1.5px;
+width: 380px;
+background-image: -webkit-linear-gradient(left, #F3904F, #3B4371);
+background-image: -moz-linear-gradient(left,#F3904F, #3B4371);
+background-image: -ms-linear-gradient(left, #F3904F, #3B4371);
+background-image: -o-linear-gradient(left, #F3904F, #3B4371);
 }

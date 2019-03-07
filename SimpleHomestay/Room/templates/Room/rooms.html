@@ -53,8 +53,8 @@
       <div class="container">
         <div class="row">
        {% for rooms in Roompage %}
-          <div class="card text-center col-lg-4 col-md-4 col-sm-6">
-            <img data-src="{{rooms.image.url}}" class="card-img-top img-fluid lazyload" alt="N/A">
+          <div class="card shadow text-center col-lg-4 col-md-6">
+            <img data-src="{{rooms.image.url}}" class="card-img-top lazyload" alt="N/A">
             <div class="card-body">
               <h5 class="card-title" style="letter-spacing: 0.7rem; font-size: 25px; font-weight: lighter;">{{rooms.name}}</h5>
               <p class="card-text">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
@@ -67,7 +67,7 @@
                 <li class="list-group-item">{{rooms.facility}}</li>
               </ul>
             </div>
-            <div class="card-footer text-center">
+            <div class="p-5 text-center">
               <a href="#" class="btn btn-primary" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">Book Now</a>
             </div>
           </div><!-- end card -->

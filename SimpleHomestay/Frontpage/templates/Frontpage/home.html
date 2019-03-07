@@ -30,30 +30,30 @@
 
     <!-- ===================================== Page Content ===================================== -->
 
-    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle">
-  <a class="navbar-brand navStyle1" href="#">The HomeStay</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav text-center">
-      <a class="nav-item nav-link navStyle2" href="{% url 'Room:Roompage' %}">The Room <span class="sr-only">(current)</span></a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#facility">The Facility</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#direction">Getting Here</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#promotion">The Promotion</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#gallery">The Gallery</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#contact">Contact Us</a>
-      <hr class="style3">
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle sticky-top">
+      <a class="navbar-brand navStyle1" href="#">The HomeStay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav text-center">
+          <a class="nav-item nav-link navStyle2" href="{% url 'Room:Roompage' %}">The Room <span class="sr-only">(current)</span></a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#facility">The Facility</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#direction">Getting Here</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#promotion">The Promotion</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#gallery">The Gallery</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#contact">Contact Us</a>
+          <hr class="style3">
+        </div>
+      </div>
+    </nav>
 
-<div class="container d-none d-lg-block text-center">
+    <div class="container d-none d-lg-block text-center">
 
       <h1 class="h1Style">THE HOMESTAY</h1>
 
@@ -82,12 +82,15 @@
         </li>
       </ul>
 
-    </div>
+    </div><!-- end d-none -->
 
 
-    <div class="container-fluid homeContainerStyle">
 
 {% for info in info %}
+
+    <div class="container-fluid ">
+
+
       <div class="card shadow homeCrdStyle roomCrdStyle">
         <div class="card-body text-right">
 
@@ -123,7 +126,8 @@
 
     </div><!-- end The Room container -->
 
-    <div class="container-fluid homeContainerStyle">
+
+    <div class="container-fluid">
 
 
       <div class="card shadow homeCrdStyle facilityCrdStyle">
@@ -160,7 +164,8 @@
 
     </div><!-- end The facility container -->
 
-    <div class="container-fluid homeContainerStyle">
+
+    <div class="container-fluid">
 
 
       <div class="card shadow homeCrdStyle wayCrdStyle">
@@ -189,59 +194,59 @@
 
     </div><!-- end The way container -->
 
-    <div class="container-fluid homeContainerStyle">
+
+    <div class="container-fluid">
+
       <div class="card promotionCrdStyle">
-        <h1 class="crdH1Style pl-3">Promotions</h1>
-      </div>
+          <h1 class="crdH1Style pl-3">Promotions</h1>
+        </div>
 
-  <div class="card-group">
+      <div class="card-group">
 
-    <div class="card shadow promotionCrdStyle">
+        <div class="card shadow promotionCrdStyle">
 
-      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
-      <div class="card-body">
-        <h2>Promo</h2>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-    <div class="card shadow promotionCrdStyle">
+          <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
+          <div class="card-body">
+            <h2>Promo</h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+        <div class="card shadow promotionCrdStyle">
 
-      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
-      <div class="card-body">
-        <h2>Promo</h2>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-    <div class="card shadow promotionCrdStyle">
+          <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
+          <div class="card-body">
+            <h2>Promo</h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+        <div class="card shadow promotionCrdStyle">
 
-      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
-      <div class="card-body">
-        <h2>Promo</h2>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
+          <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
+          <div class="card-body">
+            <h2>Promo</h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
 
-  </div><!-- card-group -->
+      </div><!-- card-group -->
 
-
-</div><!-- end Promotion container -->
-
-<hr class="style3">
+      <hr class="style3">
+    </div><!-- end Promotion container -->
 
 
-    <div class="container-fluid homeContainerStyle">
+    <div class="container-fluid">
 
 
         <div class="card shadow galleryCrdStyle">
@@ -309,7 +314,7 @@
     </div><!-- end Gallery container -->
 
 
-    <div class="container-fluid homeContainerStyle">
+    <div class="container-fluid">
 
       <div class="card shadow homeCrdStyle numCrdStyle nbrCrdStyle">
         <div class="card-body text-right">
@@ -337,6 +342,7 @@
 
 
     </div><!-- end Contact Us container -->
+
 {% endfor %}
 
     <div class="d-none d-lg-block">

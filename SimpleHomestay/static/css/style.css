@@ -229,142 +229,50 @@ L___                              |
 
 }
 
-/* ===================================================================================================================
-======================================================================================================================
 
-
-            \\\\\\\\\\
-            CONTAINER STYLE
-            //////////
-
-
-======================================================================================================================
-=================================================================================================================== */
-
-.homeContainerStyle {
-  padding-left: 0rem;
-  padding-right: 0rem;
-}
-
-
-/* ===================================================================================================================
-======================================================================================================================
-
-
-            \\\\\\\\\\
-            CARD STYLE
-            //////////
-
-
-======================================================================================================================
-=================================================================================================================== */
-
-/* --------- Room card styling --------- */
-@media screen and (min-width: 451px) {
-  .roomCrdStyle {
-    height: 800px;
-  }
-}
-
-
-@media screen and (max-width: 450px) {
-  .roomCrdStyle {
-    height: 860px;
-  }
-}
-
-
-/* --------- facility  card styling --------- */
-@media screen and (min-width: 601px) {
-  .facilityCrdStyle {
-    height: 680px;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-  .facilityCrdStyle {
-    height: 980px;
-  }
-}
-
-
-/* --------- Getting Here  card styling --------- */
-@media screen and (min-width: 601px) {
-  .wayCrdStyle {
-    height: 480px;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-  .wayCrdStyle {
-    height: 530px;
-  }
-}
-
-
-
-/* ---------  Number Card  Styling --------- */
-@media screen and (min-width: 601px) {
-  .numCrdStyle {
-    height: 500px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .numCrdStyle {
-    height: 580px;
-  }
-}
-
-
-/* ------ card font --------- */
-@media screen and (max-width: 601px) {
-  .crdFtStyle {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .crdFtStyle {
-    text-align: center;
-  }
-}
-
-
-@media screen and (max-width: 781px) {
-  .crdFtStyle1 {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 780px) {
-  .crdFtStyle1 {
-    text-align: center;
-  }
-}
 
 
 /* --------- backgroung img for home cards --------- */
 .roomCrdStyle {
   background-image: url("../img/54332bgemeffectbackground.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .facilityCrdStyle {
   background-image: url("../img/bb8989background.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .wayCrdStyle {
   background-image: url("../img/bb8989bottomroundbackground.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.promoCrdStyle {
+  background-image: url("../img/bb8989background.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .galleryCrdStyle {
   background-image: url("../img/bb8989background.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .numCrdStyle {
   background-image: url("../img/54332bgemeffectbackground.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 
@@ -377,6 +285,16 @@ hr.style3 {
 border: 0;
 height: 1.5px;
 width: 380px;
+background-image: -webkit-linear-gradient(left, #F3904F, #3B4371);
+background-image: -moz-linear-gradient(left,#F3904F, #3B4371);
+background-image: -ms-linear-gradient(left, #F3904F, #3B4371);
+background-image: -o-linear-gradient(left, #F3904F, #3B4371);
+}
+
+hr.style1 {
+border: 0;
+height: 2px;
+width: 250px;
 background-image: -webkit-linear-gradient(left, #F3904F, #3B4371);
 background-image: -moz-linear-gradient(left,#F3904F, #3B4371);
 background-image: -ms-linear-gradient(left, #F3904F, #3B4371);

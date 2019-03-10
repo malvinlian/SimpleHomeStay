@@ -1,43 +1,21 @@
-from django.contrib.auth.forms import UserCreationForm
-from .models import Student, User, Course
 from django import forms
+from django.forms.forms import BoundField
+from django.template import Context, loader
 
 
-class UserForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password1', 'password2']
-        help_texts = {
-            'username': 'same as your roll no.',
-        }
+class TemplatedForm(forms.ModelForm):
+    '''
+    From http://djangosnippets.org/snippets/121/
+    '''
+    def output_via_template(self):
+        """Helper function for fieldsting fields data from form"""
 
+        bound_fields = [BoundField(self, field, name) for name, field \
+                        in self.fields.items()]
 
-class LoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+        c = Context(dict(form=self, bound_fields=bound_fields))
+        t = loader.get_template('forms/form.html')
+        return t.render(c)
 
-
-class RegistrationForm(forms.ModelForm):
-    class Meta:
-        model = Student
-        fields = [
-            'student_name',
-            'father_name',
-            'enrollment_no',
-            'course',
-            'dob',
-            'gender']
-
-
-class SelectionForm(forms.ModelForm):
-    class Meta:
-        model = Student
-        fields = ['room']
-
-
-class DuesForm(forms.Form):
-    choice = forms.ModelChoiceField(queryset=Student.objects.all().filter(no_dues=True))
-
-
-class NoDuesForm(forms.Form):
-    choice = forms.ModelChoiceField(queryset=Student.objects.all().filter(no_dues=False))
+    def __unicode__(self):
+        return self.output_via_template()

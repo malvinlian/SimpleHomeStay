@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'Room',
     'Frontpage',
     'Booking',
+    'django_bootstrap_calendar',
 ]
-
-AUTH_USER_MODEL = 'Booking.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

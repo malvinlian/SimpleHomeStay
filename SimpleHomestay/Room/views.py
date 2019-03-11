@@ -11,3 +11,11 @@ def Roompage(request):
     }
 
     return render(request , template , context)
+  
+  
+def Booking(request):
+    
+    template = 'Room/booking.html'
+    context = locals()
+    return render(request , template , context)
+  

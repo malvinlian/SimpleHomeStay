@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Frontpage.urls' , namespace='Frontpage')),
     path('room/', include('Room.urls' , namespace='Room')),
-    path('booking/', include('Booking.urls' , namespace='Booking')),
+    #path('booking/', include('Booking.urls' , namespace='Booking')),
 ]
 
 

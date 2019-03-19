@@ -21,7 +21,7 @@ class Room(models.Model):
         verbose_name_plural = 'Room'
 
 class Reservation(models.Model):
-
+    room = models.ForeignKey(Room,on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=50)
 
     email = models.EmailField()

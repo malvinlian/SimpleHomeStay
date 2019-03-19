@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .models import Room
+from .models import Room,Reservation
 from .forms import ReserveForm
 # Create your views here.
 
@@ -23,8 +23,10 @@ def Booking(request,id):
     if request.method == 'POST':
         reserve_form = ReserveForm(request.POST)
         if reserve_form.is_valid():
-            reserve_form.save()
-            return HttpResponseRedirect('/room/booking/')
+            reserve = reserve_form.save(commit=False)
+            reserve.reserve_form = room
+            reserve.save()
+            return HttpResponseRedirect('/room/')
 
     else:
         reserve_form = ReserveForm()

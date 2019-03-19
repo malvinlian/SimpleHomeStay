@@ -9,6 +9,6 @@ class RoomAdmin(admin.ModelAdmin):
 admin.site.register(Room, RoomAdmin)
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ['name' ,'email' , 'CheckIn'  , 'CheckOut' ]
+    list_display = ['room','name' ,'email' , 'CheckIn'  , 'CheckOut' ]
 
 admin.site.register(Reservation, ReservationAdmin)

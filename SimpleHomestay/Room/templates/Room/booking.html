@@ -1,5 +1,7 @@
+{% load bootstrap4 %}
 {% load static %}
 {% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,139 +22,77 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="{% static 'css/style1.css' %}" />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
 </head>
 
 <body>
-	    
+
 	<div class="container">
 
       <hr>
       <nav aria-label="breadcrumb bg-none">
         <ol class="breadcrumb" style="letter-spacing: 0.3rem; font-size: 22px; font-weight: 300;">
           <li class="breadcrumb-item"><a href="{% url 'Frontpage:home' %}">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Rooms</li>
+					<li class="breadcrumb-item"><a href="{% url 'Room:Roompage' %}">Room</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Reservation</li>
         </ol>
       </nav>
       <hr>
+	</div>
 
-    </div><!-- end container -->
-	
-	<div id="booking" class="section">
-		<div class="section-center">
-			<div class="container">
-				<div class="row">
-					<div class="booking-form">
-						<div class="form-header">
-							<h1>Make your reservation</h1>
-						</div>
-						<form>
-							<div class="form-group">
-								<input class="form-control" type="text" placeholder="Country, ZIP, city...">
-								<span class="form-label">Destination</span>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" type="date" required>
-										<span class="form-label">Check In</span>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" type="date" required>
-										<span class="form-label">Check out</span>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<select class="form-control" required>
-											<option value="" selected hidden>no of rooms</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<span class="select-arrow"></span>
-										<span class="form-label">Rooms</span>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<select class="form-control" required>
-											<option value="" selected hidden>no of adults</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<span class="select-arrow"></span>
-										<span class="form-label">Adults</span>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<select class="form-control" required>
-											<option value="" selected hidden>no of children</option>
-											<option>0</option>
-											<option>1</option>
-											<option>2</option>
-										</select>
-										<span class="select-arrow"></span>
-										<span class="form-label">Children</span>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" type="email" placeholder="Enter your Email">
-										<span class="form-label">Email</span>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" type="tel" placeholder="Enter you Phone">
-										<span class="form-label">Phone</span>
-									</div>
-								</div>
-							</div>
-							<div class="form-btn">
-								<button class="submit-btn">Book Now</button>
-							</div>
-						</form>
-					</div>
-				</div>
+<section class="probootstrap-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<p><img src="{{Room.image.url}}" class="img-responsive" alt="Free Bootstrap Template by uicookies.com"></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Details</h2>
+
+				<p>Type : {{Room.name}}</p>
+				<p>Capacity : {{Room.capacity}} m2</p>
+				<p>Beds : {{Room.beds_number}}</p>
+				<p>Price : {{Room.price}}</p>
+				<p>Facility : {{Room.facility}}</p>
 			</div>
 		</div>
 	</div>
+</section>
 
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script>
-		$('.form-control').each(function () {
-			floatedLabel($(this));
-		});
+	<section class="probootstrap-section">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-md-4">
+	            <h2>Room Reservation</h2>
+	              <form action="" method="POST">
+	                {% csrf_token %}
+	                  {% bootstrap_form reserve_form %}
+	                  {% buttons %}
+	                      <button type="submit" class="btn btn-primary">Reserve</button>
+	                  {% endbuttons %}
+	              </form>
+	          </div>
+						<div class="col-md-4">
+	            <h2>Room Reservation</h2>
 
-		$('.form-control').on('input', function () {
-			floatedLabel($(this));
-		});
+	          </div>
+						<div class="col-md-4">
+							<h2>Room Reservation</h2>
 
-		function floatedLabel(input) {
-			var $field = input.closest('.form-group');
-			if (input.val()) {
-				$field.addClass('input-not-empty');
-			} else {
-				$field.removeClass('input-not-empty');
-			}
-		}
-	</script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+						</div>
 
+	        </div>
+	      </div>
+	    </section>
+
+
+
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+
+
+</body>
 </html>

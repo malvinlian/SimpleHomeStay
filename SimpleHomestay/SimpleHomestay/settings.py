@@ -40,8 +40,8 @@ INSTALLED_APPS = [
 
     'Room',
     'Frontpage',
-    'schedule',
-    'djangobower',
+    'bootstrap4',
+
 ]
 
 MIDDLEWARE = [
@@ -130,10 +130,11 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
+    'sass_processor.finders.CssFinder',
 
 ]
 
-BOWER_COMPONENTS_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'components'))
+#BOWER_COMPONENTS_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'components'))
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'SimpleHomestay/static/'
@@ -141,11 +142,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
+
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
-BOWER_INSTALLED_APPS = [
-    'jquery',
-    'jquery-ui',
-    'bootstrap'
-]
+#   BOWER_INSTALLED_APPS = [
+#      'jquery',
+#      'bootstrap'
+#    ]

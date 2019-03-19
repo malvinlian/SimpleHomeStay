@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load static %}
-{% load scheduletags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,9 +48,9 @@
       <hr>
 
     </div><!-- end container -->
-    
-    
-    
+
+
+
     <section>
       <div class="container">
         <div class="row">
@@ -74,7 +74,7 @@
               </ul>
             </div>
             <div class="pb-5 text-center">
-              <a href="{% url 'Room:Booking' %}" class="btn btn-primary" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">Book Now</a>
+              <a href="{% url 'Room:Booking' rooms.id %}" class="btn btn-primary" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">Book Now</a>
             </div>
           </div><!-- end card -->
            {% endfor %}

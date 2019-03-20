@@ -30,7 +30,7 @@
 
     <!-- ===================================== Page Content ===================================== -->
 
-    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle1 sticky-top">
       <a class="navbar-brand navStyle1" href="#">The HomeStay</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
 
     <div class="d-none d-lg-block">
 
-      <ul class="nav justify-content-center">
+      <ul class="nav justify-content-center navBgStyle">
         <li class="nav-item">
           <a class="nav-link navStyle" href="{% url 'Room:Roompage' %}">Room<i class="fas fa-grip-lines-vertical"></i></a>
         </li>
@@ -78,7 +78,7 @@
           <a class="nav-link navStyle" href="#gallery">Gallery<i class="fas fa-grip-lines-vertical"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navStyle" href="#contact">Contact Us</a>
+          <a class="nav-link navStyle" href="#contact">Contact Us<i class="fas fa-grip-lines-vertical"></i></a>
         </li>
       </ul>
 
@@ -91,7 +91,7 @@
     <div class="container-fluid ">
 
 
-      <div class="card shadow homeCrdStyle roomCrdStyle">
+      <div class="card shadow roomCrdStyle">
         <div class="card-body text-right">
 
             <h1 id="room" class="crdH1Style">Long Lellang</h1>
@@ -103,7 +103,7 @@
               <p>{{info.message1}}</p>
               <p><i class="fas fa-grip-lines-vertical"></i> Check in Time: {{info.check_in}} <i class="fas fa-grip-lines-vertical"></i></p>
               <p><i class="fas fa-grip-lines-vertical"></i> Check out Time: {{info.check_out}} <i class="fas fa-grip-lines-vertical"></i></p>
-              <a href="{% url 'Room:Roompage' %}" class="btn btn-secondary">Book now</a>
+              <a href="{% url 'Room:Roompage' %}" class="btn btn-success">Book now</a>
             </div>
 
             <div class="col-md-7 crdFtStyle1">
@@ -130,7 +130,7 @@
     <div class="container-fluid">
 
 
-      <div class="card shadow homeCrdStyle facilityCrdStyle">
+      <div class="card shadow facilityCrdStyle">
         <div class="card-body">
           <br>
           <h1 id="facility" class="crdH1Style">The Facility</h1>
@@ -168,7 +168,7 @@
     <div class="container-fluid">
 
 
-      <div class="card shadow homeCrdStyle wayCrdStyle">
+      <div class="card shadow wayCrdStyle">
         <div class="card-body text-right">
           <br>
           <h1 id="direction" class="crdH1Style">The Way Here</h1>
@@ -197,13 +197,13 @@
 
     <div class="container-fluid">
 
-      <div class="card promotionCrdStyle">
-          <h1 class="crdH1Style pl-3">Promotions</h1>
+      <div class="card promoCrdStyle">
+          <h1 id="promotion" class="crdH1Style pl-3">Promotions</h1>
         </div>
 
       <div class="card-group">
 
-        <div class="card shadow promotionCrdStyle">
+        <div class="card shadow promoCrdStyle">
 
           <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
           <div class="card-body">
@@ -215,7 +215,7 @@
             <li class="list-group-item">Vestibulum at eros</li>
           </ul>
         </div>
-        <div class="card shadow promotionCrdStyle">
+        <div class="card shadow promoCrdStyle">
 
           <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
           <div class="card-body">
@@ -227,7 +227,7 @@
             <li class="list-group-item">Vestibulum at eros</li>
           </ul>
         </div>
-        <div class="card shadow promotionCrdStyle">
+        <div class="card shadow promoCrdStyle">
 
           <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
           <div class="card-body">
@@ -316,7 +316,7 @@
 
     <div class="container-fluid">
 
-      <div class="card shadow homeCrdStyle numCrdStyle nbrCrdStyle">
+      <div class="card shadow numCrdStyle nbrCrdStyle">
         <div class="card-body text-right">
           <br>
           <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
@@ -346,7 +346,7 @@
 {% endfor %}
 
     <div class="d-none d-lg-block">
-      <ul class="nav justify-content-center">
+      <ul class="nav justify-content-center navBgStyle">
         <li class="nav-item">
           <a class="nav-link navStyle" href="#room">Room</a>
         </li>

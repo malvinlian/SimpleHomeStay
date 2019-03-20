@@ -88,19 +88,6 @@ L___                              |
   padding-bottom: 20px;
 }
 
-/* ===================================================================================================================
-======================================================================================================================
-
-
-            \\\\\\\\\\
-            CAROUSEL STYLE
-            //////////
-
-
-======================================================================================================================
-=================================================================================================================== */
-
-
 
 
 /* ===================================================================================================================
@@ -210,7 +197,10 @@ L___                              |
    letter-spacing: 0.8rem;
    padding-left: 0.5rem;
    padding-right: 0.8rem;
-   background-color: grey;
+}
+
+.navBgStyle {
+  background-image: linear-gradient(to right, #334d50, #cbcaa5);
 }
 
 .navStyle1 {
@@ -224,8 +214,8 @@ L___                              |
   letter-spacing: 0.8rem;
 }
 
-.navBgStyle {
-  background-color: grey;
+.navBgStyle1 {
+  background-image: linear-gradient(to right, #334d50, #cbcaa5);
 
 }
 
@@ -273,6 +263,10 @@ L___                              |
   background-repeat: repeat;
   background-size: auto;
   background-position: center;
+}
+
+.bookCrdStyle {
+  background-image: -webkit-linear-gradient(#F7F8F8, #ACBB78);
 }
 
 

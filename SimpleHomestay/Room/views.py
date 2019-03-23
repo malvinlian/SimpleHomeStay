@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Room,Reservation
 from .forms import ReserveForm
+from bootstrap_datepicker_plus import DatePickerInput
 # Create your views here.
 
 def Roompage(request):

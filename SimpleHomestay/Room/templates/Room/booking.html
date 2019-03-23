@@ -1,4 +1,5 @@
 {% load bootstrap4 %}
+
 {% load static %}
 {% load i18n %}
 
@@ -76,13 +77,17 @@
 	</div>
 </section>
 
+
 	<section class="probootstrap-section">
 	      <div class="container">
 	        <div class="">
 	          <div class="col-md-4">
 	            <h2>Room Reservation</h2>
 	              <form action="" method="POST">
-	                {% csrf_token %}
+	                	{% csrf_token %}
+										{% bootstrap_css %}
+										{% bootstrap_javascript jquery='full' %}
+										{{ reserve_form.media }}
 	                  {% bootstrap_form reserve_form %}
 	                  {% buttons %}
 	                      <button type="submit" class="btn btn-primary">Reserve</button>

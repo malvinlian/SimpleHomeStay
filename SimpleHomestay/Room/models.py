@@ -39,4 +39,4 @@ class Reservation(models.Model):
         verbose_name_plural = 'Reservation'
 
     def __str__(self):
-         return self.name
+      return "%s" %(self.room)

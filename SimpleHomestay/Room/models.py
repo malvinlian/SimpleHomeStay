@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 # Create your models here.
 
 class Room(models.Model):
@@ -39,4 +39,4 @@ class Reservation(models.Model):
         verbose_name_plural = 'Reservation'
 
     def __str__(self):
-         return self.name
+      return "%s" %(self.room)

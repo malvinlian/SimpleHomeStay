@@ -1,242 +1,184 @@
-{% load bootstrap4 %}
-{% load static %}
-{% load i18n %}
+{% load bootstrap4 %} {% load static %} {% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Booking Form HTML Template</title>
+	<title>Booking Form HTML Template</title>
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}" />
 
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{% static 'css/style1.css' %}" />
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="container text-center">
-			<h1 style="font-size: 65px; font-weight: 400;">The Home Stay</h1>
-			<h3 style="letter-spacing: 10px; font-size: 18px;">RESERVATION</h3>
-		</div>
-		<!-- end container -->
+	<div class="container">
 
+		<hr>
+		<nav aria-label="breadcrumb bg-none">
+			<ol class="breadcrumb" style="letter-spacing: 0.3rem; font-size: 22px; font-weight: 300;">
+				<li class="breadcrumb-item"><a href="{% url 'Frontpage:home' %}">Home</a></li>
+				<li class="breadcrumb-item"><a href="{% url 'Room:Roompage' %}">Room</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Reservation</li>
+			</ol>
+		</nav>
+		<hr>
+	</div>
 
-		<div class="container">
-
-	      <hr>
-
-	      <nav aria-label="breadcrumb bg-none">
-	        <ol class="breadcrumb" style="letter-spacing: 0.3rem; font-size: 22px; font-weight: 300;">
-	          <li class="breadcrumb-item"><a href="{% url 'Frontpage:home' %}">Home</a></li>
-						<li class="breadcrumb-item"><a href="{% url 'Room:Roompage' %}">Room</a></li>
-	          <li class="breadcrumb-item active" aria-current="page">Reservation</li>
-	        </ol>
-	      </nav>
-
-	      <hr>
-
-		</div><!-- end containers -->
-
-
-		<section class="probootstrap-section">
-
+	<section class="probootstrap-section">
+		<div class="row">
 			<div class="container">
+				<div class="container col-md-6" align="">
+					<p><img src="{{Room.image.url}}" class="img-responsive" alt="Free Bootstrap Template by uicookies.com"></p>
+				</div>
+			</div>
 
-				<div class="row">
-					<div class="col-md-12" align="middle">
-						<p><img src="{{Room.image.url}}" class="img-responsive" alt="Free Bootstrap Template by uicookies.com"></p>
-					</div>
-				</div><!-- end row -->
+				<div class="container col-md-6" align="">
+					<h2>Room Details</h2>
 
-				<div class="row">
-					<div class="col-md-6" align="">
-						<h2>Details</h2>
+					<p>Type : {{Room.name}}</p>
+					<p>Capacity : {{Room.capacity}} person</p>
+					<p>Beds : {{Room.beds_number}} </p>
+					<p>Price : RM{{Room.price}}</p>
+					<p>Facility : {{Room.facility}}</p>
+				</div>
 
-						<p>Type : {{Room.name}}</p>
-						<p>Capacity : {{Room.capacity}} person</p>
-						<p>Beds : {{Room.beds_number}} </p>
-						<p>Price : RM{{Room.price}}</p>
-						<p>Facility : {{Room.facility}}</p>
-					</div><!-- end col-6 -->
-
-					<div class="col-md-6" align="">
-						<br>
-						<h4>How to book?</h4>
-						<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
-						<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019,  select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
-						<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
-						<p>We will confirm your booking via email together with the payment information.</p>
-					</div><!-- end col-6 -->
-		<br>
-				</div><!-- end row -->
-
-				<div class="col text-center">
+				<div class="container col-md-6" align="">
+					<br>
+					<h4>How to book?</h4>
+					<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
+					<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019, select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
+					<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
+					<p>We will confirm your booking via email together with the payment information.</p>
+				</div>
+				<br>
+				<div class="col" align="center">
 					<p>
-					<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
+						<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
 					</p>
-				</div><!-- end col-6 -->
-	<br>
+				</div>
+				<br>
 
-			</div><!-- end container -->
-
-		</section><!-- end section -->
-
+		</div>
+	</section>
 
 
-		<section class="probootstrap-section">
+	<section class="probootstrap-section">
 
-		      <div class="container">
-		        <div class="row">
+			<div class="row">
+				<div class="container col-md-6">
+					<h2>Room Reservation</h2>
+					<form action="" method="POST">
+						{% csrf_token %}
+						{% bootstrap_css %}
+						{% bootstrap_javascript jquery='full' %}
+						{{ reserve_form.media }}
+						{% bootstrap_form reserve_form %}
+						{% buttons %}
+						<button type="submit" class="btn btn-primary">Reserve</button> {% endbuttons %}
+					</form>
+				</div>
+				<div class="container col-md-6">
+					<h4>Rates</h4>
+					<table>
+						<tbody>
+							<tr>
+								<th>Day</th>
+								<th>Per Night</th>
+							</tr>
+							<tr>
+								<td>Monday-Thursday</td>
+								<td>RM1160</td>
+							</tr>
+							<tr>
+								<td>Friday &amp; Sunday</td>
+								<td>RM1360</td>
+							</tr>
+							<tr>
+								<td>Saturday</td>
+								<td>RM1580</td>
+							</tr>
+							<tr>
+								<td>Extra bed (max 4 pax)</td>
+								<td>RM50 each</td>
+							</tr>
+							<tr>
+								<td>Kitchen</td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>BBQ area</td>
+								<td>Yes</td>
+							</tr>
+						</tbody>
+					</table>
+					<h4>Important Info</h4>
+					<table>
+						<tbody>
+							<tr>
+								<th>ITEM</th>
+								<th>DESCRIPTION</th>
+							</tr>
+							<tr>
+								<td>NO RECEPTION</td>
+								<td>There is no reception area. We practice a lay back style for check-in procedure. When you arrive, just mention your name used for booking and make your balance payment (if any) to the caretaker. Then, they will guide you to your shed/house.</td>
+							</tr>
+							<tr>
+								<td>EATERY OUTLET/STALLS?</td>
+								<td>There is no food or drink sold at the site. Please bring your own food &amp; drink.</td>
+							</tr>
+							<tr>
+								<td>BASIC AMENITIES</td>
+								<td>Items that are NOT provided: Towels, toiletries, hair dryers, mosquito repellent, TV, WIFI.
+							</tr>
+						</tbody>
+					</table>
+					<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
+				</div>
 
-		          <div class="col-md-4">
-		            <h2>Room Reservation</h2>
-		              <form action="" method="POST">
-		                {% csrf_token %}
-		                  {% bootstrap_form reserve_form %}
-		                  {% buttons %}
-		                      <button type="submit" class="btn button black">Reserve</button>
-		                  {% endbuttons %}
-		              </form>
-		          </div><!-- end col-4 -->
-							<div class="col-md-4">
-		            <h4>Rates</h4>
-								<table>
-									<tbody>
-										<tr>
-											<th>Day</th>
-											<th>Per Night</th>
-										</tr>
-										<tr>
-											<td>Monday-Thursday</td>
-											<td>RM1160</td>
-										</tr>
-										<tr>
-											<td>Friday &amp; Sunday</td>
-											<td>RM1360</td>
-										</tr>
-										<tr>
-											<td>Saturday</td>
-											<td>RM1580</td>
-										</tr>
-										<tr>
-											<td>Extra bed (max 4 pax)</td>
-											<td>RM50 each</td>
-										</tr>
-										<tr>
-											<td>Kitchen</td>
-											<td>Yes</td>
-										</tr>
-										<tr>
-											<td>BBQ area</td>
-											<td>Yes</td>
-										</tr>
-									</tbody>
-								</table>
-								<h4>Important Info</h4>
-								<table>
-									<tbody>
-										<tr>
-											<th>ITEM</th>
-											<th>DESCRIPTION</th>
-										</tr>
-										<tr>
-											<td>NO RECEPTION</td>
-											<td>There is no reception area. We practice a lay back style for check-in procedure. When you arrive, just mention your name used for booking and make your balance payment (if any) to the caretaker. Then, they will guide you to your shed/house.</td>
-										</tr>
-										<tr>
-											<td>EATERY OUTLET/STALLS?</td>
-											<td>There is no food or drink sold at the site. Please bring your own food &amp; drink.</td>
-										</tr>
-										<tr>
-											<td>BASIC AMENITIES</td>
-											<td>Items that are NOT provided: Towels, toiletries, hair dryers, mosquito repellent, TV, WIFI.
-										</tr>
-									</tbody>
-								</table>
-								<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
-							</div><!-- end col-4 -->
-							<div class="col-md-4">
-								<h4>Terms and Conditions</h4>
-								<ul class="disc">
-									<li>Check-in after 2pm, check-out before 12 noon.</li>
-									<li>All rates quoted are nett.</li>
-									<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
-									<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
-									<li>Children ages 8 years and above to be charged as adult.</li>
-									<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
-									<li>No meals included.</li>
-									<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
-									<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the usage/purpose of your booking.</li>
-									<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
-								</ul>
-							</div><!-- end col-4 -->
-
-						</div><!-- end row -->
-
-		      </div><!-- end container -->
-
-		</section><!-- end probootstrap-section -->
+			</div>
+			<div class="container col-md-6">
+				<h4>Terms and Conditions</h4>
+				<ul class="disc">
+					<li>Check-in after 2pm, check-out before 12 noon.</li>
+					<li>All rates quoted are nett.</li>
+					<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
+					<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
+					<li>Children ages 8 years and above to be charged as adult.</li>
+					<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
+					<li>No meals included.</li>
+					<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
+					<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the 		usage/purpose of your booking.</li>
+					<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
+				</ul>
+			</div>
 
 
 
+
+		</div>
+		</div>
+</section>
 
 
 
 
 
-
-		<script src="{% static 'js/jquery.min.js' %}"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
 
 
-		<!--
-    _..-...
-   ,Y+  .:.:\_
-  | |./'     ``-\
-  |,'`           `.
-  |               `_
-  |     ,-''-. ,-''':
-  |    /      .'     :                                     ****lian was here****
-  | .\ |    o  |__o.,'                           _.-' '\
- '|\| \\      /    `)                        ,..,'     ,'
-  |`|  ' `..- .....<:                      ,'    `. ,-:
-  ' ,-   _.-'        `.                 _,'       +'  |
-   |`|  ,'            '.              ,'       - _/_,'-\
-    `.Y|   _,,.. ____./'           ,-'         /'|`'  _|
-      ||  | |  |  | |           _.-              `--+'
-      |-.  "|:.|..|-.    _,.. ,/'               ,..Y'
-      / `\.       ,-'  ,' /,,'               _,'
-     .:_    -----'''|.:   |             _,Y''
-    /  '`'';'.     /:  \  |        _,Y-'
-    |      |  ' .  | `._| |     _,'
-_/-'';.. _ |     ` |   \   `.Y'i'                                           * MadTechnologies Copyright 2018-2019
-,'    ,'    '             |    i/'                                          * MadWorks
-,.'      /                   ..--'
-|       |                     \
-: .     /                      ' .
-/'  `._ .'                         `.
-/     _''                            \
-/     ./                               \
-/      /                                 \
-/      |                                   \
-/     ,'|                                   |
-
-
-    -->
-
-	</body>
+</body>
 
 </html>

@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Room,Reservation
 from .forms import ReserveForm
-from bootstrap_datepicker_plus import DatePickerInput
 # Create your views here.
 
 def Roompage(request):
@@ -17,7 +16,7 @@ def Roompage(request):
 
 def Booking(request,id):
 
-    room  = Room.objects.get(id=id)
+    room = Room.objects.get(id=id)
 
     template = 'Room/booking.html'
 
@@ -26,7 +25,6 @@ def Booking(request,id):
         if reserve_form.is_valid():
             reserve = reserve_form.save(commit=False)
             reserve.reserve_form = room
-            reserve.room = room
             reserve.save()
             return HttpResponseRedirect('/room/')
 

@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'Room',
     'Frontpage',
     'bootstrap4',
-    'bootstrap_datepicker_plus',
 
 ]
 
@@ -147,8 +146,6 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
-
-DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 #   BOWER_INSTALLED_APPS = [
 #      'jquery',

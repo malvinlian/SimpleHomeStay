@@ -5,13 +5,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Booking Form HTML Template</title>
+	<title>Bookings</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
@@ -22,9 +22,12 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
 
-</head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
-<body>
+	</head>
+
+	<body>
+
 
 	<div class="container text-center">
 		<h1 style="font-size: 65px; font-weight: 400;">The Home Stay</h1>
@@ -51,7 +54,7 @@
 		</div><!-- end containers -->
 
 
-		<section class="probootstrap-section">
+
 
 			<div class="container">
 
@@ -62,24 +65,35 @@
 				</div><!-- end row -->
 
 				<div class="row">
-					<div class="col-md-6" align="">
-						<h2>Details</h2>
 
-						<p>Type : {{Room.name}}</p>
-						<p>Capacity : {{Room.capacity}} person</p>
-						<p>Beds : {{Room.beds_number}} </p>
-						<p>Price : RM{{Room.price}}</p>
-						<p>Facility : {{Room.facility}}</p>
-					</div><!-- end col-6 -->
+					<div class="card shadow">
+						<div class="card-body">
 
-					<div class="col-md-6" align="">
-						<br>
-						<h4>How to book?</h4>
-						<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
-						<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019,  select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
-						<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
-						<p>We will confirm your booking via email together with the payment information.</p>
-					</div><!-- end col-6 -->
+							<div class="row">
+
+								<div class="col-md-6">
+									<h2>Room Details</h2>
+
+									<p>Type : {{Room.name}}</p>
+									<p>Capacity : {{Room.capacity}} person</p>
+									<p>Beds : {{Room.beds_number}} </p>
+									<p>Price : RM{{Room.price}}</p>
+									<p>Facility : {{Room.facility}}</p>
+								</div><!-- end col-6 -->
+
+								<div class="col-md-6">
+									<h4>How to book?</h4>
+									<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
+									<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019,  select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
+									<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
+									<p>We will confirm your booking via email together with the payment information.</p>
+								</div><!-- end col-6 -->
+
+							</div><!-- end row -->
+
+						</div><!-- end card-body -->
+					</div><!-- end card -->
+
 		<br>
 				</div><!-- end row -->
 
@@ -92,27 +106,24 @@
 
 			</div><!-- end container -->
 
-		</section><!-- end section -->
+
+			<!-- Image Section - set the background image for the header in the line below -->
+		  <section class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1081');">
+		    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+		    <div style="height: 200px;"></div>
+		  </section>
+
+			<hr class="style3">
 
 
+			<div class="container-fluid">
+				<div class="card shadow">
+					<div class="card-body">
 
-		<section class="probootstrap-section">
+						<div class="row">
 
-		      <div class="container">
-		        <div class="row">
-
-		          <div class="col-md-4">
-		            <h2>Room Reservation</h2>
-		              <form action="" method="POST">
-		                {% csrf_token %}
-		                  {% bootstrap_form reserve_form %}
-		                  {% buttons %}
-		                      <button type="submit" class="btn button black">Reserve</button>
-		                  {% endbuttons %}
-		              </form>
-		          </div><!-- end col-4 -->
-							<div class="col-md-4">
-		            <h4>Rates</h4>
+							<div class="col-6">
+								<h4>Rates</h4>
 								<table>
 									<tbody>
 										<tr>
@@ -145,6 +156,11 @@
 										</tr>
 									</tbody>
 								</table>
+								<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
+
+							</div><!-- end col-4 -->
+
+							<div class="col-6">
 								<h4>Important Info</h4>
 								<table>
 									<tbody>
@@ -166,36 +182,80 @@
 										</tr>
 									</tbody>
 								</table>
-								<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
-							</div><!-- end col-4 -->
-							<div class="col-md-4">
-								<h4>Terms and Conditions</h4>
-								<ul class="disc">
-									<li>Check-in after 2pm, check-out before 12 noon.</li>
-									<li>All rates quoted are nett.</li>
-									<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
-									<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
-									<li>Children ages 8 years and above to be charged as adult.</li>
-									<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
-									<li>No meals included.</li>
-									<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
-									<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the usage/purpose of your booking.</li>
-									<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
-								</ul>
+
 							</div><!-- end col-4 -->
 
 						</div><!-- end row -->
 
+					</div><!-- end card-body -->
+				</div><!-- end card -->
+			</div><!-- end container -->
+
+			<hr class="style3">
+
+		      <div class="container">
+
+		        <div class="card shadow">
+							<div class="card-body">
+
+									<h2>Room Reservation</h2>
+										<form action="" method="POST">
+											{% csrf_token %}
+												{% bootstrap_form reserve_form %}
+												{% buttons %}
+														<button type="submit" class="btn button black">Reserve</button>
+												{% endbuttons %}
+										</form>
+
+							</div><!-- end card-body -->
+						</div><!-- end card -->
+
 		      </div><!-- end container -->
 
-		</section><!-- end probootstrap-section -->
+
+					<hr class="style3">
 
 
+					<div class="container-fluid">
+						<div class="card shadow">
+							<div class="card-body">
+
+									<h4>Terms and Conditions</h4>
+									<ul class="disc">
+										<li>Check-in after 2pm, check-out before 12 noon.</li>
+										<li>All rates quoted are nett.</li>
+										<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
+										<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
+										<li>Children ages 8 years and above to be charged as adult.</li>
+										<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
+										<li>No meals included.</li>
+										<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
+										<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the usage/purpose of your booking.</li>
+										<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
+									</ul>
+
+							</div>
+						</div>
+					</div>
+
+<!-- ======================================= end page content ============================================= -->
 
 
-
-
-
+		<footer class="text-center pt-3">
+				        <ul class="nav justify-content-center">
+				          <li class="nav-item p-2 mb-1 bg-white rounded">
+				            <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
+				          </li>
+				          <li class="nav-item p-2 mb-1 bg-white rounded">
+				            <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
+				          </li>
+				          <li class="nav-item p-2 mb-1 bg-white rounded">
+				            <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
+				          </li>
+				        </ul>
+				        <p class="my-1 footerFont">Copyright 2019</p>
+				        <h6 class="footerFont">Created by MADTechnologies</h6>
+		</footer>
 
 
 		<script src="{% static 'js/jquery.min.js' %}"></script>

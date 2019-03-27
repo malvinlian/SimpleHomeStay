@@ -27,13 +27,16 @@ class Reservation(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=12)
 
-    totalguest = models.PositiveIntegerField()
+    NumberOfGuest = models.PositiveIntegerField(default = 0)
 
     CheckIn = models.DateField()
     CheckOut = models.DateField()
 
-    #totalPrice = models.IntegerField(default = 0)
+    nights = models.PositiveIntegerField(default = 0)
+
+    TotalCost = models.PositiveIntegerField(default = 0,null=True)
     notes  = models.TextField()
+
 
     class Meta:
         verbose_name_plural = 'Reservation'

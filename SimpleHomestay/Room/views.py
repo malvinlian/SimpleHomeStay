@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .models import Room,Reservation
 from .forms import ReserveForm
 from bootstrap_datepicker_plus import DatePickerInput
+from datetime import datetime
 # Create your views here.
 
 def Roompage(request):
@@ -11,18 +12,16 @@ def Roompage(request):
     context = {
         'Roompage' : Roompage ,
     }
-
     return render(request , template , context)
 
 
 def Booking(request,id):
-
     room  = Room.objects.get(id=id)
-
     template = 'Room/booking.html'
 
     if request.method == 'POST':
         reserve_form = ReserveForm(request.POST)
+
         if reserve_form.is_valid():
             reserve = reserve_form.save(commit=False)
             reserve.reserve_form = room
@@ -33,10 +32,22 @@ def Booking(request,id):
     else:
         reserve_form = ReserveForm()
 
-
     context = {
         'reserve_form' : reserve_form,
-        'Room' : room
+        'Room' : room,
     }
 
     return render(request , template , context)
+
+def BookingTotalCalculation(CheckIn,CheckOut,TotalCost,nights):
+    price = Room.price
+    CheckOut = datetime.strptime(str(CheckOut), "%m/%d/%Y")
+    CheckIn = datetime.strptime(str(CheckIn), "%m/%d/%Y")
+    timedeltaSum = CheckOut - CheckIn
+    nights = timedeltaSum.days
+    TotalCost = nights * price
+    context = {
+        'nights': nights,
+        'TotalCost' : TotalCost ,
+    }
+    return render(request , context)

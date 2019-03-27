@@ -1,5 +1,8 @@
 {% load i18n %}
 {% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,9 +68,7 @@
             <div class="card-body">
               <p class="card-text">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Monday-Thursday RM{{rooms.weekday_price}}</li>
-                <li class="list-group-item">Friday & Sunday RM{{rooms.weekend_price}}</li>
-                <li class="list-group-item">Saturday RM740</li>
+                <li class="list-group-item">Price RM{{rooms.price}}</li>
                 <li class="list-group-item">Extra bed (max 2 pax) RM50 each</li>
                 <li class="list-group-item">{{rooms.promotion}}</li>
                 <li class="list-group-item">{{rooms.facility}}</li>

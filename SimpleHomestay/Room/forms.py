@@ -6,10 +6,8 @@ from .models import Reservation, Room
 class ReserveForm(forms.ModelForm):
     class Meta :
         model = Reservation
-        fields = ('name','email', 'phone_number','totalguest','CheckIn','CheckOut','notes')
+        fields = ('name','email', 'phone_number','NumberOfGuest','CheckIn','CheckOut','notes')
         widgets = {
             'CheckIn': DatePickerInput(),
             'CheckOut': DatePickerInput(),
         }
-
-        

@@ -188,13 +188,16 @@
 			<hr class="style3">
 
 
-			<div class="container-fluid">
+																<!--Booking Calendar -->
+	  	<div class="container-fluid">
 
 				<div class="card shadow">
 					<div class="card-body">
 						<h2>Calender goes here..</h2>
+						{% get_or_create_calendar other_user other_user.username as calendar %}
+						<p><a href="{% url "calendar_list" %}">{% trans "The list of available Calendars." %}</a></p>
 					</div>
-				</div><!-- end card -->
+				</div>												<!-- end card -->
 
 			</div><!-- end container fluid -->
 
@@ -218,22 +221,11 @@
 														<button type="submit" class="btn button black">Reserve</button>
 												{% endbuttons %}
 										</form>
-					</div><!-- end card-body -->
-					<!--Booking Calendar -->
-
-
-{% get_or_create_calendar other_user other_user.username as calendar %}
-<p><a href="{% url "calendar_list" %}">{% trans "The list of available Calendars." %}</a></p>
-
-
-
-						</div><!-- end card -->
-
-		      </div><!-- end container -->
-
+							</div><!-- end card-body -->
+					</div><!-- end card -->
+		</div><!-- end container -->
 
 					<hr class="style3">
-
 
 					<div class="container-fluid">
 						<div class="card shadow">

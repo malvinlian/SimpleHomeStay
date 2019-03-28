@@ -1,6 +1,7 @@
 {% load bootstrap4 %}
 {% load static %}
 {% load i18n %}
+{% load scheduletags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,43 +54,12 @@
 
 		</div><!-- end containers -->
 
-
-
-
-			<div class="container">
-<<<<<<< HEAD
-				<div class="container col-md-6" align="">
-					<p><img src="{{Room.image.url}}" class="img-responsive" alt="Free Bootstrap Template by uicookies.com"></p>
-				</div>
-			</div>
-
-				<div class="container col-md-6" align="">
-					<h2>Room Details</h2>
-
-					<p>Type : {{Room.name}}</p>
-					<p>Capacity : {{Room.capacity}} person</p>
-					<p>Beds : {{Room.beds_number}} </p>
-					<p>Price : RM{{Room.price}}</p>
-					<p>Facility : {{Room.facility}}</p>
-				</div>
-
-				<div class="container col-md-6" align="">
-					<br>
-					<h4>How to book?</h4>
-					<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
-					<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019, select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
-					<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
-					<p>We will confirm your booking via email together with the payment information.</p>
-				</div>
 				<br>
-				<div class="col" align="center">
-=======
-
-				<div class="row">
-					<div class="col-md-12" align="middle">
-						<p><img src="{{Room.image.url}}" class="img-responsive" alt="Free Bootstrap Template by uicookies.com"></p>
-					</div>
-				</div><!-- end row -->
+					<!-- Image Section - set the background image for the header in the line below -->
+					<section class="py-5 bg-image-full" style="background-image: url({{Room.image.url}});">
+						<!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+						<div style="height: 200px;"></div>
+					</section>
 
 				<div class="row">
 
@@ -115,143 +85,22 @@
 									<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
 									<p>We will confirm your booking via email together with the payment information.</p>
 								</div><!-- end col-6 -->
-
+								<div class="col text-center">
+									<p>
+									<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
+									</p>
+								</div>
 							</div><!-- end row -->
-
 						</div><!-- end card-body -->
 					</div><!-- end card -->
-
-		<br>
 				</div><!-- end row -->
 
-				<div class="col text-center">
->>>>>>> ab8ca7ad5e669dab0079d3862f710066a9cc0741
-					<p>
-					<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
-					</p>
-<<<<<<< HEAD
-				</div>
-				<br>
+		<hr class="style3">
 
-		</div>
-	</section>
-
-
-	<section class="probootstrap-section">
-
-			<div class="row">
-				<div class="container col-md-6">
-					<h2>Room Reservation</h2>
-					<form action="" method="POST">
-						{% csrf_token %}
-						{% bootstrap_css %}
-						{% bootstrap_javascript jquery='full' %}
-						{{ reserve_form.media }}
-						{% bootstrap_form reserve_form %}
-						{% buttons %}
-						<h2>Total : {{ TotalCost }} for {{ nights }}nights</h2>
-						<button type="submit" class="btn btn-primary">Reserve</button> {% endbuttons %}
-					</form>
-				</div>
-				<div class="container col-md-6">
-					<h4>Rates</h4>
-					<table>
-						<tbody>
-							<tr>
-								<th>Day</th>
-								<th>Per Night</th>
-							</tr>
-							<tr>
-								<td>Monday-Thursday</td>
-								<td>RM1160</td>
-							</tr>
-							<tr>
-								<td>Friday &amp; Sunday</td>
-								<td>RM1360</td>
-							</tr>
-							<tr>
-								<td>Saturday</td>
-								<td>RM1580</td>
-							</tr>
-							<tr>
-								<td>Extra bed (max 4 pax)</td>
-								<td>RM50 each</td>
-							</tr>
-							<tr>
-								<td>Kitchen</td>
-								<td>Yes</td>
-							</tr>
-							<tr>
-								<td>BBQ area</td>
-								<td>Yes</td>
-							</tr>
-						</tbody>
-					</table>
-					<h4>Important Info</h4>
-					<table>
-						<tbody>
-							<tr>
-								<th>ITEM</th>
-								<th>DESCRIPTION</th>
-							</tr>
-							<tr>
-								<td>NO RECEPTION</td>
-								<td>There is no reception area. We practice a lay back style for check-in procedure. When you arrive, just mention your name used for booking and make your balance payment (if any) to the caretaker. Then, they will guide you to your shed/house.</td>
-							</tr>
-							<tr>
-								<td>EATERY OUTLET/STALLS?</td>
-								<td>There is no food or drink sold at the site. Please bring your own food &amp; drink.</td>
-							</tr>
-							<tr>
-								<td>BASIC AMENITIES</td>
-								<td>Items that are NOT provided: Towels, toiletries, hair dryers, mosquito repellent, TV, WIFI.
-							</tr>
-						</tbody>
-					</table>
-					<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
-				</div>
-
-			</div>
-			<div class="container col-md-6">
-				<h4>Terms and Conditions</h4>
-				<ul class="disc">
-					<li>Check-in after 2pm, check-out before 12 noon.</li>
-					<li>All rates quoted are nett.</li>
-					<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
-					<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
-					<li>Children ages 8 years and above to be charged as adult.</li>
-					<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
-					<li>No meals included.</li>
-					<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
-					<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the 		usage/purpose of your booking.</li>
-					<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
-				</ul>
-			</div>
-
-
-
-
-		</div>
-		</div>
-</section>
-
-
-
-
-
-<script src="{% static 'js/jquery.min.js' %}"></script>
-
-
+		<script src="{% static 'js/jquery.min.js' %}"></script>
 </body>
-=======
-				</div><!-- end col-6 -->
-	<br>
-
-			</div><!-- end container -->
-
-
 			<!-- Image Section - set the background image for the header in the line below -->
-		  <section class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1081');">
+		  <section class="py-5 bg-image-full" style="background-image: url({{Room.image.url}});">
 		    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
 		    <div style="height: 200px;"></div>
 		  </section>
@@ -345,12 +194,22 @@
 										<form action="" method="POST">
 											{% csrf_token %}
 												{% bootstrap_form reserve_form %}
+												{% bootstrap_css %}
+												{% bootstrap_javascript jquery='full' %}
+												{{ reserve_form.media }}
 												{% buttons %}
 														<button type="submit" class="btn button black">Reserve</button>
 												{% endbuttons %}
 										</form>
+					</div><!-- end card-body -->
+					<!--Booking Calendar -->
 
-							</div><!-- end card-body -->
+
+{% get_or_create_calendar other_user other_user.username as calendar %}
+<p><a href="{% url "calendar_list" %}">{% trans "The list of available Calendars." %}</a></p>
+
+
+
 						</div><!-- end card -->
 
 		      </div><!-- end container -->
@@ -442,6 +301,6 @@ _/-'';.. _ |     ` |   \   `.Y'i'                                           * Ma
     -->
 
 	</body>
->>>>>>> ab8ca7ad5e669dab0079d3862f710066a9cc0741
+
 
 </html>

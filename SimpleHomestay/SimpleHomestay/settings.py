@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'Room',
     'Frontpage',
     'bootstrap4',
+    'bootstrap_datepicker_plus',
+    'schedule',
+    'djangobower',
 
 ]
 
@@ -142,12 +145,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+BOWER_COMPONENTS_ROOT = '/static/components/'
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
-#   BOWER_INSTALLED_APPS = [
-#      'jquery',
-#      'bootstrap'
-#    ]
+BOWER_INSTALLED_APPS = [
+                        'jquery',
+                        'jquery-ui',
+                        'bootstrap'
+                        ]

@@ -54,15 +54,17 @@
 
 
 
-    <section>
       <div class="container">
         <div class="row">
        {% for rooms in Roompage %}
-          <div class="card shadow text-center col-xl-4 col-md-6">
+          <div class="card card-hover shadow text-center col-xl-4 col-md-6 p-0">
+            <div class="bg-warning p-2">
+              Hot Selling
+            </div>
             <div class="card-body">
               <h5 class="card-title" style="letter-spacing: 0.7rem; font-size: 25px; font-weight: lighter;">{{rooms.name}}</h5>
               <hr class="style1">
-              <img data-src="{{rooms.image.url}}" class="card-img lazyload pt-1" alt="N/A">
+              <img data-src="{{rooms.image.url}}" class="card-img card__img lazyload pt-1" alt="N/A">
             </div>
 
             <div class="card-body">
@@ -80,9 +82,8 @@
           </div><!-- end card -->
            {% endfor %}
         </div>
-     </div>
+     </div><!-- end container -->
 
-  </section><!-- end row 1 -->
 
 
   <!-- ======================================= end page content ============================================= -->

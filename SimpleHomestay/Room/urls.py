@@ -9,9 +9,6 @@ app_name = 'Room'
 
 urlpatterns = [
     path('',views.Roompage , name='Roompage'),
-    #path('booking/',views.Booking, name='Booking'),
-    path('booking/<int:id>',views.Booking, name='Booking',),
-    #path('calendar/',views.Calendar, name='calendar',),
-    #path('fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
-   #path('room/<int:id>',views.Room , name='Room'),
+    path('booking/<int:id>', views.Booking.as_view(), name='Booking',),
+    path('booking/<int:id>/<int:year>/<int:month>/', views.Booking.as_view(), name='Booking',),
 ]

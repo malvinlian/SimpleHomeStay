@@ -12,7 +12,7 @@ class Frontpage(models.Model):
     check_out = models.CharField(max_length=12, null=True)
     promotion = models.TextField(null=True)
 
-    image1 = models.ImageField(upload_to='home/' , null=True)
+    image1 = models.ImageField(upload_to='room/mycalendar' , null=True)
     gallery1 = models.ImageField(upload_to='home/' , null=True)
     gallery2 = models.ImageField(upload_to='home/' , null=True)
     gallery3 = models.ImageField(upload_to='home/' , null=True)

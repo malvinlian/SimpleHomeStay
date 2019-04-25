@@ -40,10 +40,9 @@ INSTALLED_APPS = [
 
     'Room',
     'Frontpage',
+
     'bootstrap4',
     'bootstrap_datepicker_plus',
-    'schedule',
-    'djangobower',
 
 ]
 
@@ -78,6 +77,13 @@ TEMPLATES = [
         },
     },
 ]
+
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.app_directories.load_template_source',
+)
 
 WSGI_APPLICATION = 'SimpleHomestay.wsgi.application'
 
@@ -137,7 +143,6 @@ STATICFILES_FINDERS = [
 
 ]
 
-#BOWER_COMPONENTS_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'components'))
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'SimpleHomestay/static/'
@@ -145,14 +150,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-BOWER_COMPONENTS_ROOT = '/static/components/'
+
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
-
-BOWER_INSTALLED_APPS = [
-                        'jquery',
-                        'jquery-ui',
-                        'bootstrap'
-                        ]

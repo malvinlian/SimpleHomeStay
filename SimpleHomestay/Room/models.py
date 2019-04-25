@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 
 # Create your models here.
 
@@ -29,8 +31,8 @@ class Reservation(models.Model):
 
     NumberOfGuest = models.PositiveIntegerField(default = 0)
 
-    CheckIn = models.DateField()
-    CheckOut = models.DateField()
+    CheckIn = models.DateTimeField()
+    CheckOut = models.DateTimeField()
 
     nights = models.PositiveIntegerField(default = 0)
 
@@ -43,3 +45,23 @@ class Reservation(models.Model):
 
     def __str__(self):
          return self.name
+
+
+
+class Schedule(models.Model):
+    """Schedule"""
+    Room_no = (
+        ("!","!"),
+        ("@","@"),
+        ("#","#"),
+        ("$","$"),
+    )
+    summary = models.CharField( max_length=1, choices=Room_no)
+    description = models.TextField('description', blank=True)
+    start_time = models.TimeField('start_time', default=datetime.time(7, 0, 0))
+    end_time = models.TimeField('end_time', default=datetime.time(7, 0, 0))
+    date = models.DateField('date')
+    
+
+    def __str__(self):
+        return self.summary

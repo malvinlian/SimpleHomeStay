@@ -7,5 +7,4 @@ app_name = 'Frontpage'
 
 urlpatterns = [
     path('' , views.home , name='home'),
-
 ]

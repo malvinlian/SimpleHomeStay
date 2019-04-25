@@ -40,6 +40,11 @@ INSTALLED_APPS = [
 
     'Room',
     'Frontpage',
+    'bootstrap4',
+    'bootstrap_datepicker_plus',
+    'schedule',
+    'djangobower',
+
 ]
 
 MIDDLEWARE = [
@@ -50,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'SimpleHomestay.urls'
@@ -67,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -122,11 +129,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+    'sass_processor.finders.CssFinder',
+
+]
+
+#BOWER_COMPONENTS_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'components'))
+
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
+STATIC_ROOT = 'SimpleHomestay/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+BOWER_COMPONENTS_ROOT = '/static/components/'
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
+
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
+
+BOWER_INSTALLED_APPS = [
+                        'jquery',
+                        'jquery-ui',
+                        'bootstrap'
+                        ]

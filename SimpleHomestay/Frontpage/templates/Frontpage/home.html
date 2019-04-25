@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>The HomeStay</title>
+    <title>HomeStay</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -30,32 +30,32 @@
 
     <!-- ===================================== Page Content ===================================== -->
 
-    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle">
-  <a class="navbar-brand navStyle1" href="#">The HomeStay</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav text-center">
-      <a class="nav-item nav-link navStyle2" href="{% url 'Room:Roompage' %}">The Room <span class="sr-only">(current)</span></a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#facility">The Facility</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#direction">Getting Here</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#promotion">The Promotion</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#gallery">The Gallery</a>
-      <hr class="style3">
-      <a class="nav-item nav-link navStyle2" href="#contact">Contact Us</a>
-      <hr class="style3">
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle sticky-top">
+      <a class="navbar-brand navStyle1" href="#">HomeStay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav text-center">
+          <a class="nav-item nav-link navStyle2" href="{% url 'Room:Roompage' %}">Rooms<span class="sr-only">(current)</span></a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#facility">The Facility</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#direction">Getting Here</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#promotion">The Promotion</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#gallery">The Gallery</a>
+          <hr class="style3">
+          <a class="nav-item nav-link navStyle2" href="#contact">Contact Us</a>
+          <hr class="style3">
+        </div>
+      </div>
+    </nav>
 
-<div class="container d-none d-lg-block text-center">
+    <div class="container d-none d-lg-block text-center">
 
-      <h1 class="h1Style">THE HOMESTAY</h1>
+      <h1 class="h1Style">HOMESTAY</h1>
 
     </div><!-- end h1 container -->
 
@@ -63,7 +63,7 @@
 
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link navStyle" href="{% url 'Room:Roompage' %}">Room<i class="fas fa-grip-lines-vertical"></i></a>
+          <a class="nav-link navStyle" href="{% url 'Room:Roompage' %}">Rooms<i class="fas fa-grip-lines-vertical"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link navStyle" href="#facility">Facility<i class="fas fa-grip-lines-vertical"></i></a>
@@ -82,25 +82,29 @@
         </li>
       </ul>
 
-    </div>
+    </div><!-- end d-none -->
 
 
-    <div class="container-fluid homeContainerStyle">
 
 {% for info in info %}
-      <div class="card homeCrdStyle roomCrdStyle">
+
+    <div class="container-fluid">
+
+
+      <div class="card shadow homeCrdStyle roomCrdStyle">
         <div class="card-body text-right">
 
-            <h1 id="room" class="crdH1Style">Long Lellang</h1>
+            <h1 id="room" class="crdH1Style text-center">Long Lellang</h1>
 
           <div class="row">
 
             <div class="col-md-5">
               <br>
+              <br>
               <p>{{info.message1}}</p>
               <p><i class="fas fa-grip-lines-vertical"></i> Check in Time: {{info.check_in}} <i class="fas fa-grip-lines-vertical"></i></p>
               <p><i class="fas fa-grip-lines-vertical"></i> Check out Time: {{info.check_out}} <i class="fas fa-grip-lines-vertical"></i></p>
-              <a href="{% url 'Room:Roompage' %}" class="btn btn-secondary">Book now</a>
+              <a href="{% url 'Room:Roompage' %}" class="btn button black">Book now</a>
             </div>
 
             <div class="col-md-7 crdFtStyle1">
@@ -108,21 +112,25 @@
               <a href="{{info.image1.url}}" data-toggle="lightbox" data-max-width="600" data-gallery="example-gallery">
                   <img data-src="{{info.image1.url}}" class="img-fluid lazyload">
               </a>
-              <br>
             </div>
 
           </div><!-- end row -->
 
         </div>
-      </div><!-- end card -->
+      </div><!-- end Main card -->
+
+      <div class="row">
+        <hr class="style3">
+      </div>
 
 
     </div><!-- end The Room container -->
 
-    <div class="container-fluid homeContainerStyle">
+
+    <div class="container-fluid">
 
 
-      <div class="card homeCrdStyle facilityCrdStyle">
+      <div class="card shadow homeCrdStyle facilityCrdStyle">
         <div class="card-body">
           <br>
           <h1 id="facility" class="crdH1Style">The Facility</h1>
@@ -149,13 +157,18 @@
 
       </div>
 
+      <div class="row">
+        <hr class="style3">
+      </div>
+
 
     </div><!-- end The facility container -->
 
-    <div class="container-fluid homeContainerStyle">
+
+    <div class="container-fluid">
 
 
-      <div class="card homeCrdStyle wayCrdStyle">
+      <div class="card shadow homeCrdStyle wayCrdStyle">
         <div class="card-body text-right">
           <br>
           <h1 id="direction" class="crdH1Style">The Way Here</h1>
@@ -174,111 +187,90 @@
         </div>
       </div>
 
+      <div class="row">
+        <hr class="style3">
+      </div>
+
 
     </div><!-- end The way container -->
 
-    <div class="container-fluid homeContainerStyle">
 
-  <br>
-  <h1 class="crdH1Style pl-3">Promotions</h1>
+    <div class="container-fluid">
 
-  <div class="card-group">
+      <div class="card promotionCrdStyle">
+          <h1 class="crdH1Style pl-3">Promotions</h1>
+        </div>
 
-    <div class="card">
+      <div class="card-group">
+        <div class="card shadow promotionCrdStyle">
 
-      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
-      <div class="card-body">
-        <h2>Promo</h2>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-    <div class="card">
+          <a href="#"><img class="card-img lazyload teaser" data-expand data-src="{{info.promotion1.url}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <h2><u>Promotions</u></h2>
+            <h5>{{info.promotion}}</h5>
+          </div>
 
-      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
-      <div class="card-body">
-        <h2>Promo</h2>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-    <div class="card">
+        </div>
 
-      <a href="#"><img class="card-img lazyload teaser" data-expand data-src="https://dummyimage.com/400x300/000/fff" alt="Card image cap"></a>
-      <div class="card-body">
-        <h2>Promo</h2>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-    <br>
+      </div><!-- card-group -->
 
-  </div><!-- card-group -->
+      <hr class="style3">
+    </div><!-- end Promotion container -->
 
 
-</div><!-- end Promotion container -->
+    <div class="container-fluid">
 
-    <div class="container-fluid homeContainerStyle">
 
-        <div class="card galleryCrdStyle">
+        <div class="card shadow galleryCrdStyle">
 
             <div class="card-body">
             <br>
               <h1 id="gallery" class="crdH1Style">The Gallery</h1>
               <p class="crdFont1">Click to view</p>
 
-                      <div class="row">
-                        <div class="col-md-4">
+                      <div class="d-flex flex-row">
+                        <div class="col p-1">
 
                           <a href="{{info.gallery1.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery1.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                              <img data-src="{{info.gallery1.url}}" class="card-img lazyload teaser" data-expand="-50">
                           </a>
 
                         </div>
-                          <div class="col-md-4">
+                          <div class="col p-1">
 
                           <a href="{{info.gallery2.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery2.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                              <img data-src="{{info.gallery2.url}}" class="card-img lazyload teaser" data-expand="-50">
                           </a>
 
                           </div>
-                          <div class="col-md-4">
+                          <div class="col p-1">
 
                           <a href="{{info.gallery3.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery3.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                              <img data-src="{{info.gallery3.url}}" class="card-img lazyload teaser" data-expand="-50">
                           </a>
 
                           </div>
 
                       </div>
-                      <div class="row">
+                      <div class="d-flex flex-row">
 
-                        <div class="col-md-4 d-none d-md-block">
+                        <div class="col p-1">
 
                         <a href="{{info.gallery4.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery4.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                              <img data-src="{{info.gallery4.url}}" class="card-img lazyload teaser" data-expand="-50">
                           </a>
 
                         </div>
-                          <div class="col-md-4 d-none d-md-block">
+                          <div class="col p-1">
 
                           <a href="{{info.gallery5.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery5.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                              <img data-src="{{info.gallery5.url}}" class="card-img lazyload teaser" data-expand="-50">
                           </a>
                           </div>
-                          <div class="col-md-4 d-none d-md-block">
+                          <div class="col p-1">
 
                           <a href="{{info.gallery6.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery6.url}}" class="img-fluid card-img lazyload teaser" data-expand="-50">
+                              <img data-src="{{info.gallery6.url}}" class="card-img lazyload teaser" data-expand="-50">
                           </a>
                           </div>
                       </div>
@@ -287,12 +279,16 @@
             <br>
         </div><!-- end card -->
 
+        <div class="row">
+          <hr class="style3">
+        </div>
+
     </div><!-- end Gallery container -->
 
 
-    <div class="container-fluid homeContainerStyle">
+    <div class="container-fluid">
 
-      <div class="card homeCrdStyle numCrdStyle nbrCrdStyle">
+      <div class="card shadow homeCrdStyle numCrdStyle nbrCrdStyle">
         <div class="card-body text-right">
           <br>
           <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
@@ -312,27 +308,34 @@
         </div>
       </div>
 
+      <div class="row">
+        <hr class="style3">
+      </div>
+
 
     </div><!-- end Contact Us container -->
+
 {% endfor %}
 
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link navStyle" href="#room">Room</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navStyle" href="#facility">Facility</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navStyle" href="#gallery">Gallery</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navStyle" href="#direction">Getting Her</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navStyle" href="#contact">Contact Us</a>
-      </li>
-    </ul>
+    <div class="d-none d-lg-block">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#room">Room</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#facility">Facility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#direction">Getting Here</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navStyle" href="#contact">Contact Us</a>
+        </li>
+      </ul>
+    </div>
 
     <!-- ======================================= end page content ============================================= -->
 
@@ -392,7 +395,7 @@
     /  '`'';'.     /:  \  |        _,Y-'
     |      |  ' .  | `._| |     _,'
 _/-'';.. _ |     ` |   \   `.Y'i'                                           * MadTechnologies Copyright 2018-2019
-,'    ,'    '             |    i/'                                          * MadWorks
+,'    ,'    '             |    i/'      $$$ RRRRRRRRRR $$$                  * MadWorks
 ,.'      /                   ..--'
 |       |                     \
 : .     /                      ' .

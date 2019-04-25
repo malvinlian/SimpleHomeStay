@@ -1,5 +1,9 @@
 {% load i18n %}
-{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +33,7 @@
 
 
     <div class="container text-center">
-      <h1 style="font-size: 65px; font-weight: 400;">The Resort</h1>
+      <h1 style="font-size: 65px; font-weight: 400;">The Home Stay</h1>
       <h3 style="letter-spacing: 10px; font-size: 18px;">RESERVATION</h3>
     </div>
     <!-- end container -->
@@ -48,53 +52,59 @@
 
     </div><!-- end container -->
 
-    <section>
+
 
       <div class="container">
         <div class="row">
        {% for rooms in Roompage %}
-          <div class="card text-center col-lg-4 col-md-4 col-sm-6">
-            <img data-src="{{rooms.image.url}}" class="card-img-top img-fluid lazyload" alt="N/A">
+          <div class="card card-hover shadow text-center col-xl-4 col-md-6 p-0">
+            <div class="bg-warning p-2">
+              Hot Selling
+            </div>
             <div class="card-body">
               <h5 class="card-title" style="letter-spacing: 0.7rem; font-size: 25px; font-weight: lighter;">{{rooms.name}}</h5>
+              <hr class="style1">
+              <img data-src="{{rooms.image.url}}" class="card-img card__img lazyload pt-1" alt="N/A">
+            </div>
+
+            <div class="card-body">
               <p class="card-text">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Monday-Thursday RM{{rooms.weekday_price}}</li>
-                <li class="list-group-item">Friday & Sunday RM{{rooms.weekend_price}}</li>
-                <li class="list-group-item">Saturday RM740</li>
+                <li class="list-group-item">Price RM{{rooms.price}}</li>
                 <li class="list-group-item">Extra bed (max 2 pax) RM50 each</li>
                 <li class="list-group-item">{{rooms.promotion}}</li>
                 <li class="list-group-item">{{rooms.facility}}</li>
               </ul>
             </div>
-            <div class="card-footer text-center">
-              <a href="#" class="btn btn-primary" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">Book Now</a>
+            <div class="pb-5 text-center">
+              <a href="{% url 'Room:Booking' rooms.id %}" class="btn button black" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">Book Now</a>
             </div>
           </div><!-- end card -->
            {% endfor %}
         </div>
-     </div>
-
-  </section><!-- end row 1 -->
+     </div><!-- end container -->
 
 
-    <!-- footer -->
-    <footer class="text-center pt-3">
-      <ul class="nav justify-content-center">
-        <li class="nav-item p-2 mb-1 bg-white rounded">
-          <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
-        </li>
-        <li class="nav-item p-2 mb-1 bg-white rounded">
-          <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
-        </li>
-        <li class="nav-item p-2 mb-1 bg-white rounded">
-          <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
-        </li>
-      </ul>
-      <p class="my-1">Copyright 2019</p>
-      <h6>made by MadTechnologies</h6>
-    </footer>
-    <!-- end footer -->
+
+  <!-- ======================================= end page content ============================================= -->
+
+
+      <footer class="text-center pt-3">
+        <ul class="nav justify-content-center">
+          <li class="nav-item p-2 mb-1 bg-white rounded">
+            <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
+          </li>
+          <li class="nav-item p-2 mb-1 bg-white rounded">
+            <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
+          </li>
+          <li class="nav-item p-2 mb-1 bg-white rounded">
+            <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
+          </li>
+        </ul>
+        <p class="my-1 footerFont">Copyright 2019</p>
+        <h6 class="footerFont">Created by MADTechnologies</h6>
+      </footer>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

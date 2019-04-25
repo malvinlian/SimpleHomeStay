@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 
-from django.urls import path , include
+from django.urls import path , include, reverse
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Frontpage.urls' , namespace='Frontpage')),
     path('room/', include('Room.urls' , namespace='Room')),
+    #path('booking/', include('Booking.urls' , namespace='Booking')),
+    path('schedule/', include('schedule.urls')),
 ]
 
 

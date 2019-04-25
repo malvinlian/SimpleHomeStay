@@ -10,6 +10,7 @@ class Frontpage(models.Model):
     message1 = models.TextField(null=False)
     check_in = models.CharField(max_length=12, null=True)
     check_out = models.CharField(max_length=12, null=True)
+    promotion = models.TextField(null=True)
 
     image1 = models.ImageField(upload_to='home/' , null=True)
     gallery1 = models.ImageField(upload_to='home/' , null=True)
@@ -18,6 +19,7 @@ class Frontpage(models.Model):
     gallery4 = models.ImageField(upload_to='home/' , null=True)
     gallery5 = models.ImageField(upload_to='home/' , null=True)
     gallery6 = models.ImageField(upload_to='home/' , null=True)
+    promotion1 = models.ImageField(upload_to='home/' , null=True)
 
 
     def __str__(self):

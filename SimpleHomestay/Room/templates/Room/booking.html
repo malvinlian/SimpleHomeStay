@@ -1,12 +1,11 @@
-{% load bootstrap4 %}
 {% load static %}
 {% load i18n %}
-{% load scheduletags %}
+
 
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,9 +24,9 @@
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
-	</head>
+</head>
 
-	<body>
+<body>
 
 
 	<div class="container text-center">
@@ -38,243 +37,286 @@
 	<!-- end container -->
 
 
-		<div class="container">
+	<div class="container">
 
-	      <hr>
+		<hr>
 
-	      <nav aria-label="breadcrumb bg-none">
-	        <ol class="breadcrumb" style="letter-spacing: 0.3rem; font-size: 22px; font-weight: 300;">
-	          <li class="breadcrumb-item"><a href="{% url 'Frontpage:home' %}">Home</a></li>
-						<li class="breadcrumb-item"><a href="{% url 'Room:Roompage' %}">Rooms</a></li>
-	          <li class="breadcrumb-item active" aria-current="page">Reservation</li>
-	        </ol>
-	      </nav>
+		<nav aria-label="breadcrumb bg-none">
+			<ol class="breadcrumb" style="letter-spacing: 0.3rem; font-size: 22px; font-weight: 300;">
+				<li class="breadcrumb-item"><a href="{% url 'Frontpage:home' %}">Home</a></li>
+				<li class="breadcrumb-item"><a href="{% url 'Room:Roompage' %}">Rooms</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Reservation</li>
+			</ol>
+		</nav>
 
-	      <hr>
+		<hr>
 
-		</div><!-- end containers -->
+	</div><!-- end containers -->
 
-				<br>
-					<!-- Image Section - set the background image for the header in the line below -->
-					<section class="py-5 bg-image-full" style="background-image: url({{Room.image.url}});">
-						<!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-						<div style="height: 200px;"></div>
-					</section>
+	<br>
+	<!-- Image Section - set the background image for the header in the line below -->
+	<section class="py-5 bg-image-full" style="background-image: url({{Room.image.url}});">
+		<!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+		<div style="height: 200px;"></div>
+	</section>
+
+	<div class="row">
+
+		<div class="card shadow">
+			<div class="card-body">
 
 				<div class="row">
 
-					<div class="card shadow">
-						<div class="card-body">
+					<div class="col-md-6">
+						<h2>Room Details</h2>
 
-							<div class="row">
+						<p>Type : {{Room.name}}</p>
+						<p>Capacity : {{Room.capacity}} person</p>
+						<p>Beds : {{Room.beds_number}} </p>
+						<p>Price : RM{{Room.price}}</p>
+						<p>Facility : {{Room.facility}}</p>
+					</div><!-- end col-6 -->
 
-								<div class="col-md-6">
-									<h2>Room Details</h2>
-
-									<p>Type : {{Room.name}}</p>
-									<p>Capacity : {{Room.capacity}} person</p>
-									<p>Beds : {{Room.beds_number}} </p>
-									<p>Price : RM{{Room.price}}</p>
-									<p>Facility : {{Room.facility}}</p>
-								</div><!-- end col-6 -->
-
-								<div class="col-md-6">
-									<h4>How to book?</h4>
-									<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
-									<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019,  select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
-									<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
-									<p>We will confirm your booking via email together with the payment information.</p>
-								</div><!-- end col-6 -->
-								<div class="col text-center">
-									<p>
-									<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
-									</p>
-								</div>
-							</div><!-- end row -->
-						</div><!-- end card-body -->
-					</div><!-- end card -->
+					<div class="col-md-6">
+						<h4>How to book?</h4>
+						<p><strong>STEP 1:</strong> From the calendar below, select <b>only the night(s)</b> of your stay.</p>
+						<p style="color: #888"> Examples:<br> <b>If for 1 night</b> - check-in 1/1/2019 and check-out 2/1/2019, select <b>only 1/1/2019.</b><br> <b>If for 2 nights</b> - check-in 1/1/2019 and check-out 3/1/2019, select <b>only 1/1/2019 and 2/1/2019.</b><br></p>
+						<p><strong>STEP 2:</strong> Fill up all the details in the booking form below. <br><strong>STEP 3:</strong> Check the <b>TOTAL COST</b> and press <b>SEND</b>.</p>
+						<p>We will confirm your booking via email together with the payment information.</p>
+					</div><!-- end col-6 -->
+					<div class="col text-center">
+						<p>
+							<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
+						</p>
+					</div>
 				</div><!-- end row -->
+			</div><!-- end card-body -->
+		</div><!-- end card -->
+	</div><!-- end row -->
 
-		<hr class="style3">
+	<hr class="style3">
 
-		<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
 </body>
-			<!-- Image Section - set the background image for the header in the line below -->
-		  <section class="py-5 bg-image-full" style="background-image: url({{Room.image.url}});">
-		    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-		    <div style="height: 200px;"></div>
-		  </section>
+<!-- Image Section - set the background image for the header in the line below -->
+<section class="py-5 bg-image-full" style="background-image: url({{Room.image.url}});">
+	<!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+	<div style="height: 200px;"></div>
+</section>
+
+<hr class="style3">
+
+<div class="container">
+	<div class="card shadow">
+		<div class="card-body">
+
+			<div class="row">
+
+				<div class="col-md-6">
+					<h4>Rates</h4>
+					<table>
+						<tbody>
+							<tr>
+								<th>Day</th>
+								<th>Per Night</th>
+							</tr>
+							<tr>
+								<td>Monday-Thursday</td>
+								<td>RM{{Room.price}}</td>
+							</tr>
+							<tr>
+								<td>Friday &amp; Sunday</td>
+								<td>RM{{Room.price}}</td>
+							</tr>
+							<tr>
+								<td>Saturday</td>
+								<td>RM{{Room.price}}</td>
+							</tr>
+							<tr>
+								<td>Extra bed (max 4 pax)</td>
+								<td>RM50 each</td>
+							</tr>
+							<tr>
+								<td>Kitchen</td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>BBQ area</td>
+								<td>Yes</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
+				</div><!-- end col-4 -->
+				<div class="col-md-6">
+					<h4>Important Info</h4>
+					<table>
+						<tbody>
+							<tr>
+								<th>ITEM</th>
+								<th>DESCRIPTION</th>
+							</tr>
+							<tr>
+								<td>NO RECEPTION</td>
+								<td>There is no reception area. We practice a lay back style for check-in procedure. When you arrive, just mention your name used for booking and make your balance payment (if any) to the caretaker. Then, they will guide you to your
+									shed/house.</td>
+							</tr>
+							<tr>
+								<td>EATERY OUTLET/STALLS?</td>
+								<td>There is no food or drink sold at the site. Please bring your own food &amp; drink.</td>
+							</tr>
+							<tr>
+								<td>BASIC AMENITIES</td>
+								<td>Items that are NOT provided: Towels, toiletries, hair dryers, mosquito repellent, TV, WIFI.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- end col-4 -->
+			</div><!-- end row -->
+		</div><!-- end card-body -->
+	</div><!-- end card -->
+</div><!-- end container -->
 
 
-			<hr class="style3">
+<hr class="style3">
+																										<!--Booking Calendar -->
+<div class="container-fluid">
+	<div class="card shadow">
+		<br>
+		<h1 style="text-decoration: underline;" align="center">Reservation Calendar</h1>
+		<br>
+		<div id="content-main">
+			<style>
+				table {
+					table-layout: fixed;
+					width: 100%;
+				}
 
+				td>div {
+					height: 100px;
+					overflow: auto;
+					white-space: normal;
+				}
+			</style>
 
-			<div class="container">
-				<div class="card shadow">
-					<div class="card-body">
+			<div class="btn-group" style="width:100%">
+				<a href="{% url 'Room:Booking' Room.id month_previous.year month_previous.month %}#calendar" style="width:33.3%" name="calendar" class="btn button float-left black"> Previous Month </a>
+				<a href="" class="btn button float-center black" style="width:33.3%" target=""> <strong>{{ month_current | date:" Y / m  " }}</strong></a>
+				<a href="{% url 'Room:Booking' Room.id month_next.year month_next.month %}#calendar" class="btn button float-right black" style="width:33.3%" name="calendar"> Next Month </a>
+			</div>
+			<table class="table table-striped table-dark">
+				<thead>
+					<tr>
+						{% for w in week_names %}
+						<th style="text-align:justify">{{ w }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for week_day_schedles in month_day_schedules %}
+					<tr>
+						{% for day, schedules in week_day_schedles.items %}
+						{% if now == day %}
+						<td class="table-success">
+							{% else %}
+						<td>
+							{% endif %}
 
-						<div class="row">
-
-							<div class="col-md-6">
-								<h4>Rates</h4>
-								<table>
-									<tbody>
-										<tr>
-											<th>Day</th>
-											<th>Per Night</th>
-										</tr>
-										<tr>
-											<td>Monday-Thursday</td>
-											<td>RM1160</td>
-										</tr>
-										<tr>
-											<td>Friday &amp; Sunday</td>
-											<td>RM1360</td>
-										</tr>
-										<tr>
-											<td>Saturday</td>
-											<td>RM1580</td>
-										</tr>
-										<tr>
-											<td>Extra bed (max 4 pax)</td>
-											<td>RM50 each</td>
-										</tr>
-										<tr>
-											<td>Kitchen</td>
-											<td>Yes</td>
-										</tr>
-										<tr>
-											<td>BBQ area</td>
-											<td>Yes</td>
-										</tr>
-									</tbody>
-								</table>
-								<p>Please email us at test@mail.com if you require any further assistance. Or, call us at 012-3246552 from 8am-7pm (Mon-Sat only).</p>
-
-							</div><!-- end col-4 -->
-
-							<div class="col-md-6">
-								<h4>Important Info</h4>
-								<table>
-									<tbody>
-										<tr>
-											<th>ITEM</th>
-											<th>DESCRIPTION</th>
-										</tr>
-										<tr>
-											<td>NO RECEPTION</td>
-											<td>There is no reception area. We practice a lay back style for check-in procedure. When you arrive, just mention your name used for booking and make your balance payment (if any) to the caretaker. Then, they will guide you to your shed/house.</td>
-										</tr>
-										<tr>
-											<td>EATERY OUTLET/STALLS?</td>
-											<td>There is no food or drink sold at the site. Please bring your own food &amp; drink.</td>
-										</tr>
-										<tr>
-											<td>BASIC AMENITIES</td>
-											<td>Items that are NOT provided: Towels, toiletries, hair dryers, mosquito repellent, TV, WIFI.
-										</tr>
-									</tbody>
-								</table>
-
-							</div><!-- end col-4 -->
-
-						</div><!-- end row -->
-
-					</div><!-- end card-body -->
-				</div><!-- end card -->
-			</div><!-- end container -->
-
-
-			<hr class="style3">
-
-
-																<!--Booking Calendar -->
-	  	<div class="container-fluid">
-
-				<div class="card shadow">
-					<div class="card-body">
-						<h2>Calender goes here..</h2>
-						{% get_or_create_calendar other_user other_user.username as calendar %}
-						<p><a href="{% url "calendar_list" %}">{% trans "The list of available Calendars." %}</a></p>
-					</div>
-				</div>												<!-- end card -->
-
-			</div><!-- end container fluid -->
-
-
-			<hr class="style3">
-
-
-		      <div class="container">
-
-		        <div class="card shadow">
-							<div class="card-body">
-
-									<h2>Room Reservation</h2>
-										<form action="" method="POST">
-											{% csrf_token %}
-												{% bootstrap_form reserve_form %}
-												{% bootstrap_css %}
-												{% bootstrap_javascript jquery='full' %}
-												{{ reserve_form.media }}
-												{% buttons %}
-														<button type="submit" class="btn button black">Reserve</button>
-												{% endbuttons %}
-										</form>
-							</div><!-- end card-body -->
-					</div><!-- end card -->
-		</div><!-- end container -->
-
-					<hr class="style3">
-
-					<div class="container-fluid">
-						<div class="card shadow">
-							<div class="card-body">
-
-									<h4>Terms and Conditions</h4>
-									<ul class="disc">
-										<li>Check-in after 2pm, check-out before 12 noon.</li>
-										<li>All rates quoted are nett.</li>
-										<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
-										<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
-										<li>Children ages 8 years and above to be charged as adult.</li>
-										<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
-										<li>No meals included.</li>
-										<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
-										<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the usage/purpose of your booking.</li>
-										<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
-									</ul>
-
+							<div style="padding:2px;">
+								{% if month_current.month != day.month %}
+								{{ day | date:"m/d" }}
+								{% else %}
+								{{ day.day }}
+								{% endif %}
+								<br>
+								<br>
+								{% for schedule in schedules %}
+								<span style="padding:1px ;">{{schedule.summary}}</span>
+								{% endfor %}
 							</div>
-						</div>
-					</div>
+						</td>
+						{% endfor %}
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+		</div> <!-- end card -->
+	</div>
+</div><!-- end container fluid -->
+
+																				<!-- end of Booking Calendar -->
+<hr class="style3">
+
+<div class="container">
+
+	<div class="card shadow">
+		<div class="card-body">
+			<h2>Room Reservation</h2>
+			<a href="{% url 'Room:Booking' Room.id %}" class="btn button black" target="_blank">Reserve</a>
+		</div><!-- end card-body -->
+	</div><!-- end card -->
+</div><!-- end container -->
+
+<hr class="style3">
+
+<div class="container-fluid">
+	<div class="card shadow">
+		<div class="card-body">
+
+			<h4>Terms and Conditions</h4>
+			<ul class="disc">
+				<li>Check-in after 2pm, check-out before 12 noon.</li>
+				<li>All rates quoted are nett.</li>
+				<li>Rates are per night stay and is applicable for up to 10 adults per warehouse.</li>
+				<li>Maximum each warehouse can accomodate is 14 pax. 11th to 14th guests additional RM50 each.</li>
+				<li>Children ages 8 years and above to be charged as adult.</li>
+				<li><strong>Not allowed to have day trippers (no stay over night guests) come along for the trip.</strong></li>
+				<li>No meals included.</li>
+				<li>Public holidays surcharge of RM100 per shed. For eves of Christmas and New Year, surcharge of 50% per shed.</li>
+				<li>The booking is for accommodation only. Any request for event, pre-wedding photo shoot or filming - please email us at serendah@sekeping.com by stating the usage/purpose of your booking.</li>
+				<li>For viewing purposes, please make prior appointment - Mon-Thu / 12noon-2pm.</li>
+			</ul>
+
+		</div>
+	</div>
+</div>
 
 <!-- ======================================= end page content ============================================= -->
 
 
-		<footer class="text-center pt-3">
-				        <ul class="nav justify-content-center">
-				          <li class="nav-item p-2 mb-1 bg-white rounded">
-				            <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
-				          </li>
-				          <li class="nav-item p-2 mb-1 bg-white rounded">
-				            <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
-				          </li>
-				          <li class="nav-item p-2 mb-1 bg-white rounded">
-				            <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
-				          </li>
-				        </ul>
-				        <p class="my-1 footerFont">Copyright 2019</p>
-				        <h6 class="footerFont">Created by MADTechnologies</h6>
-		</footer>
+<footer class="text-center pt-3">
+	<ul class="nav justify-content-center">
+		<li class="nav-item p-2 mb-1 bg-white rounded">
+			<a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
+		</li>
+		<li class="nav-item p-2 mb-1 bg-white rounded">
+			<a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
+		</li>
+		<li class="nav-item p-2 mb-1 bg-white rounded">
+			<a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
+		</li>
+	</ul>
+	<p class="my-1 footerFont">Copyright 2019</p>
+	<h6 class="footerFont">Created by MADTechnologies</h6>
+</footer>
 
 
-		<script src="{% static 'js/jquery.min.js' %}"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.css' %}" type="text/css" media="screen">
+<script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+<!-- You can alternatively load the minified version -->
+<script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
 
-		<!--
+<link rel="stylesheet" href="{% static 'jquery-ui/themes/base/all.css' %}" type="text/css" media="screen">
+
+<!--
     _..-...
    ,Y+  .:.:\_
   | |./'     ``-\
@@ -309,7 +351,7 @@ _/-'';.. _ |     ` |   \   `.Y'i'                                           * Ma
 
     -->
 
-	</body>
+</body>
 
 
 </html>

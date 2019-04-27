@@ -12,6 +12,8 @@
 
     <title>HomeStay</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Quicksand" rel="stylesheet">
+
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Custom styles for this template -->
@@ -30,75 +32,75 @@
 
     <!-- ===================================== Page Content ===================================== -->
 
-    <nav class="navbar navbar-expand-lg navbar-light d-lg-none navBgStyle sticky-top">
-      <a class="navbar-brand navStyle1" href="#">HomeStay</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+      <div class="container">
+        <a class="navbar-brand" href="#">Homestay</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav text-center">
-          <a class="nav-item nav-link navStyle2" href="{% url 'Room:Roompage' %}">Rooms<span class="sr-only">(current)</span></a>
-          <hr class="style3">
-          <a class="nav-item nav-link navStyle2" href="#facility">The Facility</a>
-          <hr class="style3">
-          <a class="nav-item nav-link navStyle2" href="#direction">Getting Here</a>
-          <hr class="style3">
-          <a class="nav-item nav-link navStyle2" href="#promotion">The Promotion</a>
-          <hr class="style3">
-          <a class="nav-item nav-link navStyle2" href="#gallery">The Gallery</a>
-          <hr class="style3">
-          <a class="nav-item nav-link navStyle2" href="#contact">Contact Us</a>
-          <hr class="style3">
-        </div>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Room:Roompage' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Facilities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Getting Here</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Promotion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
       </div>
+
+      </div>
+
     </nav>
-
-    <div class="container d-none d-lg-block text-center">
-
-      <h1 class="h1Style">HOMESTAY</h1>
-
-    </div><!-- end h1 container -->
-
-    <div class="d-none d-lg-block">
-
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="{% url 'Room:Roompage' %}">Rooms<i class="fas fa-grip-lines-vertical"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#facility">Facility<i class="fas fa-grip-lines-vertical"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#direction">Getting Here<i class="fas fa-grip-lines-vertical"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#promotion">The Promotion<i class="fas fa-grip-lines-vertical"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#gallery">Gallery<i class="fas fa-grip-lines-vertical"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#contact">Contact Us</a>
-        </li>
-      </ul>
-
-    </div><!-- end d-none -->
 
 
 
 {% for info in info %}
 
-    <div class="container-fluid">
+
+      <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead" style="background-image: url({{info.image1.url}});">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="font-weight-light" style="color: white;">Wilderness hospitality</h1>
+            <p class="lead" style="color: white;">Come and experience something truly serene.</p>
+          </div>
+        </div>
+      </div>
+    </header>
 
 
-      <div class="card shadow homeCrdStyle roomCrdStyle">
-        <div class="card-body text-right">
+    <div class="container">
+
+
+
 
             <h1 id="room" class="crdH1Style text-center">Long Lellang</h1>
 
           <div class="row">
 
-            <div class="col-md-5">
+            <div class="col-md-5 my-auto">
               <br>
               <br>
               <p>{{info.message1}}</p>
@@ -107,8 +109,8 @@
               <a href="{% url 'Room:Roompage' %}" class="btn button black">Book now</a>
             </div>
 
-            <div class="col-md-7 crdFtStyle1">
-              <p class="crdFont1">Click for gallery</p>
+            <div class="col-md-7 crdFtStyle1 my-auto">
+              <p style="letter-spacing: 0.7rem;">Click for gallery</p>
               <a href="{{info.image1.url}}" data-toggle="lightbox" data-max-width="600" data-gallery="example-gallery">
                   <img data-src="{{info.image1.url}}" class="img-fluid lazyload">
               </a>
@@ -116,8 +118,6 @@
 
           </div><!-- end row -->
 
-        </div>
-      </div><!-- end Main card -->
 
       <div class="row">
         <hr class="style3">
@@ -127,12 +127,9 @@
     </div><!-- end The Room container -->
 
 
-    <div class="container-fluid">
+    <div class="container">
 
 
-      <div class="card shadow homeCrdStyle facilityCrdStyle">
-        <div class="card-body">
-          <br>
           <h1 id="facility" class="crdH1Style">The Facility</h1>
           <p>Check our wide selection of rooms. Lorem ipsum this a test text. Check our wide selection of rooms. Lorem ipsum this a test text.</p>
           <p class="crdFont1">Our Facilities:</p>
@@ -153,9 +150,6 @@
             </div>
           </div>
 
-        </div>
-
-      </div>
 
       <div class="row">
         <hr class="style3">
@@ -165,12 +159,9 @@
     </div><!-- end The facility container -->
 
 
-    <div class="container-fluid">
+    <div class="container">
 
 
-      <div class="card shadow homeCrdStyle wayCrdStyle">
-        <div class="card-body text-right">
-          <br>
           <h1 id="direction" class="crdH1Style">The Way Here</h1>
           <p>Below are our location, and some information on how to get here. Please do your reservation before hand for airfares and such.</p>
           <p class="crdFont1">Location:</p>
@@ -184,9 +175,6 @@
           <a style="color: black;" href="#"><i class="fas fa-4x fa-map py-3 px-3"></i></a>
           <a style="color:black;" href="#"><i class="fas fa-4x fa-street-view py-3 px-3"></i></a>
 
-        </div>
-      </div>
-
       <div class="row">
         <hr class="style3">
       </div>
@@ -197,22 +185,12 @@
 
     <div class="container-fluid">
 
-      <div class="card promotionCrdStyle">
-          <h1 class="crdH1Style pl-3">Promotions</h1>
-        </div>
-
-      <div class="card-group">
-        <div class="card shadow promotionCrdStyle">
 
           <a href="#"><img class="card-img lazyload teaser" data-expand data-src="{{info.promotion1.url}}" alt="Card image cap"></a>
-          <div class="card-body">
+
             <h2><u>Promotions</u></h2>
             <h5>{{info.promotion}}</h5>
-          </div>
 
-        </div>
-
-      </div><!-- card-group -->
 
       <hr class="style3">
     </div><!-- end Promotion container -->
@@ -221,10 +199,6 @@
     <div class="container-fluid">
 
 
-        <div class="card shadow galleryCrdStyle">
-
-            <div class="card-body">
-            <br>
               <h1 id="gallery" class="crdH1Style">The Gallery</h1>
               <p class="crdFont1">Click to view</p>
 
@@ -275,10 +249,6 @@
                           </div>
                       </div>
 
-            </div>
-            <br>
-        </div><!-- end card -->
-
         <div class="row">
           <hr class="style3">
         </div>
@@ -286,11 +256,9 @@
     </div><!-- end Gallery container -->
 
 
-    <div class="container-fluid">
+    <div class="container">
 
-      <div class="card shadow homeCrdStyle numCrdStyle nbrCrdStyle">
-        <div class="card-body text-right">
-          <br>
+
           <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
           <br>
           <p><i class="fas fa-money-check-alt"></i> Name: {{info.name}}</p>
@@ -305,8 +273,6 @@
           <i class="fab fa-3x fa-foursquare px-3 py-3"></i>
           <i class="fab fa-3x fa-instagram px-3 py-3"></i>
 
-        </div>
-      </div>
 
       <div class="row">
         <hr class="style3">
@@ -317,25 +283,6 @@
 
 {% endfor %}
 
-    <div class="d-none d-lg-block">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#room">Room</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#facility">Facility</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#gallery">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#direction">Getting Here</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navStyle" href="#contact">Contact Us</a>
-        </li>
-      </ul>
-    </div>
 
     <!-- ======================================= end page content ============================================= -->
 

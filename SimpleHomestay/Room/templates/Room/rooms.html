@@ -45,7 +45,7 @@
       <hr>
       <nav aria-label="breadcrumb bg-none">
         <ol class="breadcrumb" style="letter-spacing: 0.3rem; font-size: 22px; font-weight: 300;">
-          <li class="breadcrumb-item"><a href="{% url 'Frontpage:home' %}">Home</a></li>
+          <li class="breadcrumb-item"><a class="blackfont" href="{% url 'Frontpage:home' %}">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Rooms</li>
         </ol>
       </nav>
@@ -53,33 +53,66 @@
 
     </div><!-- end container -->
 
-      <div class="container">
+
+    <div class="container h-70">
+      <div class="row h-50 align-items-center">
+        <div class="col-12 text-center">
+          <h1 class="font-weight-light">Experience the wilderness at the top of the hill.</h1>
+          <p class="lead">Check out our accommodation options and book today.</p>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container-fluid">
         <div class="row">
        {% for rooms in Roompage %}
-          <div class="card card-hover shadow text-center col-xl-4 col-md-6 p-0">
-            <div class="bg-warning p-2">
-              Hot Selling
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" style="letter-spacing: 0.7rem; font-size: 25px; font-weight: lighter;">{{rooms.name}}</h5>
-              <hr class="style1">
-              <img data-src="{{rooms.image.url}}" class="card-img card__img lazyload pt-1" alt="N/A">
-            </div>
 
-            <div class="card-body">
-              <p class="card-text">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Price RM{{rooms.price}}</li>
-                <li class="list-group-item">Extra bed (max 2 pax) RM50 each</li>
-                <li class="list-group-item">{{rooms.promotion}}</li>
-                <li class="list-group-item">{{rooms.facility}}</li>
-              </ul>
-            </div>
-            <div class="pb-5 text-center">
-              <a href="{% url 'Room:Booking' rooms.id %}" class="btn button black" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">Book Now</a>
-            </div>
-          </div><!-- end card -->
-           {% endfor %}
+       <div class="col-xl-12 col-md-12 p-4">
+
+         <div class="card card-hover shadow text-center">
+           <div class="bg-warning p-2">
+             Hot Selling
+           </div>
+           <div class="card-body">
+
+
+             <div class="row">
+
+               <div class="col-md-6">
+
+                 <h5 style="letter-spacing: 0.7rem; font-size: 25px; font-weight: lighter;">{{rooms.name}}</h5>
+                 <hr class="style1">
+                 <img data-src="{{rooms.image.url}}" class="card-img card_img lazyload pt-1" alt="N/A">
+                 <hr class="style1">
+               </div><!-- end col-md-6 -->
+
+               <div class="col-md-6 my-auto">
+
+                 <p class="card-text">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
+                 <ul class="list-group list-group-flush">
+                   <li class="list-group-item">Price RM{{rooms.price}}</li>
+                   <li class="list-group-item">Extra bed (max 2 pax) RM50 each</li>
+                   <li class="list-group-item">{{rooms.promotion}}</li>
+                   <li class="list-group-item">{{rooms.facility}}</li>
+                 </ul>
+                 <br>
+                 <div class="pb-5 text-center">
+                   <a href="{% url 'Room:Booking' rooms.id %}" class="btn button black" style="letter-spacing: 3px; font-size: 18px; font-style: italic; font-weight: lighter;">More Details</a>
+                 </div>
+
+               </div><!-- end col-md-6 -->
+
+             </div><!-- end row -->
+
+
+           </div><!-- end card body -->
+
+         </div><!-- end card -->
+
+       </div><!-- end col -->
+
+       {% endfor %}
         </div>
      </div><!-- end container -->
 

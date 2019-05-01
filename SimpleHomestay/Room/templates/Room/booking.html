@@ -1,5 +1,8 @@
-{% load static %}
 {% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
 
 <!DOCTYPE html>
@@ -52,22 +55,19 @@
 	</div><!-- end containers -->
 
 
-	<!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead" style="background-image: url({{Room.image.url}});">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12 text-center">
-        <h1 class="font-weight-light">Vertically Centered Masthead Content</h1>
-        <p class="lead">A great starter layout for a landing page</p>
-				<a href="/" class="btn button black">More Details</a>
-      </div>
-    </div>
-  </div>
-</header>
 
-	<div class="container-fluid">
+	<div class="hero-header">
+		<div class="hero-text">
+				<h1>Experience the wilderness at the top of the hill.</h1>
+				<p class="lead">Check out our accommodation options and book today.</p>
+		</div>
+	</div>
 
-		<div class="card shadow">
+
+
+	<div class="container-fluid pt-3">
+
+		<div class="card shadow bg-success">
 			<div class="card-body">
 
 				<div class="row">
@@ -91,7 +91,7 @@
 					</div><!-- end col-6 -->
 					<div class="col text-center">
 						<p>
-							<a href="" target="_blank">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
+							<a href="" target="_blank" class="redfont">MUST-READ FAQs: Please <span style="text-decoration:underline">read this</span> carefully. It's not the usual yada yada!</a>
 						</p>
 					</div>
 				</div><!-- end row -->
@@ -102,7 +102,7 @@
 	<hr class="style3">
 
 	<div class="container">
-	<div class="card shadow">
+	<div class="card shadow bg-success">
 		<div class="card-body">
 
 			<div class="row">
@@ -179,7 +179,7 @@
 <div class="container-fluid">
 
 
-	<div class="card shadow">
+	<div class="card shadow bg-success">
 
 		<h1 class="pt-3" align="center">Reservation Calendar</h1>
 
@@ -205,7 +205,7 @@
 					<a href="{% url 'Room:Booking' Room.id month_next.year month_next.month %}#calendar" class="btn btn-outline-dark float-right" style="width:100%" name="calendar"> Next Month </a>
 				</div>
 
-				<table class="table table-striped table-dark">
+				<table class="table table-striped table-warning">
 					<thead>
 						<tr>
 							{% for w in week_names %}
@@ -264,7 +264,7 @@
 
 
 <div class="container pt-5">
-	<div class="card shadow">
+	<div class="card shadow bg-success">
 		<div class="card-body">
 
 			<h4>Terms and Conditions</h4>
@@ -290,13 +290,13 @@
 
 <footer class="text-center pt-3">
 	<ul class="nav justify-content-center">
-		<li class="nav-item p-2 mb-1 bg-white rounded">
+		<li class="nav-item p-2 mb-1 rounded">
 			<a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
 		</li>
-		<li class="nav-item p-2 mb-1 bg-white rounded">
+		<li class="nav-item p-2 mb-1 rounded">
 			<a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
 		</li>
-		<li class="nav-item p-2 mb-1 bg-white rounded">
+		<li class="nav-item p-2 mb-1 rounded">
 			<a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
 		</li>
 	</ul>

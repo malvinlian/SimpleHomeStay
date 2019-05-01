@@ -17,10 +17,13 @@
 
     <title>The Resort</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Quicksand" rel="stylesheet">
+
+    <!-- Bootstrap -->
+  	<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+  	<!-- Custom stlylesheet -->
+  	<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
 
@@ -54,14 +57,12 @@
     </div><!-- end container -->
 
 
-    <div class="container h-70">
-      <div class="row h-50 align-items-center">
-        <div class="col-12 text-center">
-          <h1 class="font-weight-light">Experience the wilderness at the top of the hill.</h1>
-          <p class="lead">Check out our accommodation options and book today.</p>
-        </div>
-      </div>
-    </div>
+    <div class="hero-header">
+  		<div class="hero-text">
+  				<h1>Experience the wilderness at the top of the hill.</h1>
+  				<p class="lead">Check out our accommodation options and book today.</p>
+  		</div>
+  	</div>
 
 
       <div class="container-fluid">
@@ -70,10 +71,8 @@
 
        <div class="col-xl-12 col-md-12 p-4">
 
-         <div class="card card-hover shadow text-center">
-           <div class="bg-warning p-2">
-             Hot Selling
-           </div>
+         <div class="card card-hover shadow text-center bg-success" >
+
            <div class="card-body">
 
 
@@ -89,12 +88,12 @@
 
                <div class="col-md-6 my-auto">
 
-                 <p class="card-text">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
+                 <p class="card-text bg-info py-2 my-0" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); color: white;">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
                  <ul class="list-group list-group-flush">
-                   <li class="list-group-item">Price RM{{rooms.price}}</li>
-                   <li class="list-group-item">Extra bed (max 2 pax) RM50 each</li>
-                   <li class="list-group-item">{{rooms.promotion}}</li>
-                   <li class="list-group-item">{{rooms.facility}}</li>
+                   <li class="list-group-item bg-info">Price RM{{rooms.price}}</li>
+                   <li class="list-group-item bg-info">Extra bed (max 2 pax) RM50 each</li>
+                   <li class="list-group-item bg-info">{{rooms.promotion}}</li>
+                   <li class="list-group-item bg-info">{{rooms.facility}}</li>
                  </ul>
                  <br>
                  <div class="pb-5 text-center">
@@ -123,13 +122,13 @@
 
       <footer class="text-center pt-3">
         <ul class="nav justify-content-center">
-          <li class="nav-item p-2 mb-1 bg-white rounded">
+          <li class="nav-item p-2 mb-1 rounded">
             <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
           </li>
-          <li class="nav-item p-2 mb-1 bg-white rounded">
+          <li class="nav-item p-2 mb-1 rounded">
             <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
           </li>
-          <li class="nav-item p-2 mb-1 bg-white rounded">
+          <li class="nav-item p-2 mb-1 rounded">
             <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
           </li>
         </ul>
@@ -143,7 +142,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
-    <script src="{% static "js/lazysizes.min.js" %}" async=""></script>
+    <script src="{% static 'js/lazysizes.min.js' %}" async=""></script>
 
     <script>
 

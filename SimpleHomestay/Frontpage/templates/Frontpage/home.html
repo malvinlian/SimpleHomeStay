@@ -1,5 +1,9 @@
 {% load i18n %}
-{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,15 +18,15 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Quicksand" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <!-- Bootstrap -->
+  	<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+  	<!-- Custom stlylesheet -->
+  	<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
 
 
   </head>
@@ -33,11 +37,11 @@
     <!-- ===================================== Page Content ===================================== -->
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
 
       <div class="container">
         <a class="navbar-brand" href="#">Homestay</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -75,211 +79,258 @@
 
 
 
+    <div class="hero-header">
+      <div class="hero-text">
+          <h1 style="font-size: 50px;" class="crdH1Style">Welcome to the Borneo Hillside</h1>
+          <p style="font-size: 18px; letter-spacing: 0.5rem;">Nature and community living.</p>
+      </div>
+    </div>
+
+
 {% for info in info %}
 
 
-      <!-- Full Page Image Header with Vertically Centered Content -->
-    <header class="masthead" style="background-image: url({{info.image1.url}});">
-      <div class="container h-100">
-        <div class="row h-100 align-items-center">
-          <div class="col-12 text-center">
-            <h1 class="font-weight-light" style="color: white;">Wilderness hospitality</h1>
-            <p class="lead" style="color: white;">Come and experience something truly serene.</p>
-          </div>
-        </div>
-      </div>
-    </header>
+
+    <section class="" >
+
+      <div class="container pt-5">
 
 
-    <div class="container">
+              <h1 id="room" class="crdH1Style text-center">Long Lellang</h1>
 
+            <div class="row">
 
+              <div class="col-md-5 my-auto">
+                <br>
+                <br>
+                <p>{{info.message1}}</p>
+                <p><i class="fas fa-grip-lines-vertical"></i> Check in Time: {{info.check_in}} <i class="fas fa-grip-lines-vertical"></i></p>
+                <p><i class="fas fa-grip-lines-vertical"></i> Check out Time: {{info.check_out}} <i class="fas fa-grip-lines-vertical"></i></p>
+                <a href="{% url 'Room:Roompage' %}" class="btn button black">View Our Rooms</a>
+              </div>
 
+              <div class="col-md-7 crdFtStyle1 my-auto">
+                <p style="letter-spacing: 0.7rem;">Click for gallery</p>
+                <a href="{{info.image1.url}}" data-toggle="lightbox" data-max-width="600" data-gallery="example-gallery">
+                    <img data-src="{{info.image1.url}}" class="img-fluid lazyload">
+                </a>
+              </div>
 
-            <h1 id="room" class="crdH1Style text-center">Long Lellang</h1>
+            </div><!-- end row -->
 
-          <div class="row">
-
-            <div class="col-md-5 my-auto">
-              <br>
-              <br>
-              <p>{{info.message1}}</p>
-              <p><i class="fas fa-grip-lines-vertical"></i> Check in Time: {{info.check_in}} <i class="fas fa-grip-lines-vertical"></i></p>
-              <p><i class="fas fa-grip-lines-vertical"></i> Check out Time: {{info.check_out}} <i class="fas fa-grip-lines-vertical"></i></p>
-              <a href="{% url 'Room:Roompage' %}" class="btn button black">Book now</a>
-            </div>
-
-            <div class="col-md-7 crdFtStyle1 my-auto">
-              <p style="letter-spacing: 0.7rem;">Click for gallery</p>
-              <a href="{{info.image1.url}}" data-toggle="lightbox" data-max-width="600" data-gallery="example-gallery">
-                  <img data-src="{{info.image1.url}}" class="img-fluid lazyload">
-              </a>
-            </div>
-
-          </div><!-- end row -->
-
-
-      <div class="row">
-        <hr class="style3">
-      </div>
-
-
-    </div><!-- end The Room container -->
-
-
-    <div class="container">
-
-
-          <h1 id="facility" class="crdH1Style">The Facility</h1>
-          <p>Check our wide selection of rooms. Lorem ipsum this a test text. Check our wide selection of rooms. Lorem ipsum this a test text.</p>
-          <p class="crdFont1">Our Facilities:</p>
-
-          <div class="row crdFtStyle">
-            <div class="col-sm-6">
-              <p><i class="fas fa-3x fa-utensils px-3 py-1"></i>BBQ Area</p>
-              <p><i class="fas fa-3x fa-warehouse px-3 py-3"></i>Hall Rental</p>
-              <p><i class="fas fa-3x fa-swimming-pool px-3 py-3"></i>Swimming Pool</p>
-              <p><i class="fas fa-3x fa-wifi px-3 py-3"></i>Internet</p>
-              <p><i class="fas fa-3x fa-hiking px-3 py-3"></i>Outdoor Activity</p>
-            </div>
-
-            <div class="col-sm-6">
-              <p><i class="fas fa-3x fa-mitten px-3 py-3"></i>Home Cook</p>
-              <p><i class="fas fa-3x fa-swimmer px-3 py-3"></i>Outdoor Swimming</p>
-              <p><i class="fas fa-3x fa-tree px-3 py-3"></i>Nature Guide</p>
-            </div>
-          </div>
-
-
-      <div class="row">
-        <hr class="style3">
-      </div>
-
-
-    </div><!-- end The facility container -->
-
-
-    <div class="container">
-
-
-          <h1 id="direction" class="crdH1Style">The Way Here</h1>
-          <p>Below are our location, and some information on how to get here. Please do your reservation before hand for airfares and such.</p>
-          <p class="crdFont1">Location:</p>
-            <li>Long Lellang, Sarawak, Malaysia</li>
-          <p>Flying Here:</p>
-            <li>Fly to Kuala Lumpur international Airport (KLIA)</li>
-            <li>Take a flight from KLIA to Miri Airport</li>
-            <li>Another flight from Miri to Long Lellang</li>
-          <br>
-          <a style="color: black;" href="#"><i class="fas fa-4x fa-map-marked-alt py-3 px-3"></i></a>
-          <a style="color: black;" href="#"><i class="fas fa-4x fa-map py-3 px-3"></i></a>
-          <a style="color:black;" href="#"><i class="fas fa-4x fa-street-view py-3 px-3"></i></a>
-
-      <div class="row">
-        <hr class="style3">
-      </div>
-
-
-    </div><!-- end The way container -->
-
-
-    <div class="container-fluid">
-
-
-          <a href="#"><img class="card-img lazyload teaser" data-expand data-src="{{info.promotion1.url}}" alt="Card image cap"></a>
-
-            <h2><u>Promotions</u></h2>
-            <h5>{{info.promotion}}</h5>
-
-
-      <hr class="style3">
-    </div><!-- end Promotion container -->
-
-
-    <div class="container-fluid">
-
-
-              <h1 id="gallery" class="crdH1Style">The Gallery</h1>
-              <p class="crdFont1">Click to view</p>
-
-                      <div class="d-flex flex-row">
-                        <div class="col p-1">
-
-                          <a href="{{info.gallery1.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery1.url}}" class="card-img lazyload teaser" data-expand="-50">
-                          </a>
-
-                        </div>
-                          <div class="col p-1">
-
-                          <a href="{{info.gallery2.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery2.url}}" class="card-img lazyload teaser" data-expand="-50">
-                          </a>
-
-                          </div>
-                          <div class="col p-1">
-
-                          <a href="{{info.gallery3.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery3.url}}" class="card-img lazyload teaser" data-expand="-50">
-                          </a>
-
-                          </div>
-
-                      </div>
-                      <div class="d-flex flex-row">
-
-                        <div class="col p-1">
-
-                        <a href="{{info.gallery4.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery4.url}}" class="card-img lazyload teaser" data-expand="-50">
-                          </a>
-
-                        </div>
-                          <div class="col p-1">
-
-                          <a href="{{info.gallery5.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery5.url}}" class="card-img lazyload teaser" data-expand="-50">
-                          </a>
-                          </div>
-                          <div class="col p-1">
-
-                          <a href="{{info.gallery6.url}}" data-toggle="lightbox" data-gallery="example-gallery">
-                              <img data-src="{{info.gallery6.url}}" class="card-img lazyload teaser" data-expand="-50">
-                          </a>
-                          </div>
-                      </div>
 
         <div class="row">
           <hr class="style3">
         </div>
 
-    </div><!-- end Gallery container -->
+
+      </div><!-- end The Room container -->
+
+    </section><!-- end section -->
 
 
-    <div class="container">
+    <section class="bg-secondary" style="color: white;">
+
+      <div class="container pt-5">
 
 
-          <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
-          <br>
-          <p><i class="fas fa-money-check-alt"></i> Name: {{info.name}}</p>
-          <p><i class="fas fa-phone"></i> Tel: {{info.phone_number}}</p>
-          <p><i class="fas fa-mobile-alt"></i> Tel: {{info.office_number}}</p>
-          <p><i class="fas fa-envelope"></i> Email: {{info.email}}</p>
-          <a href="#">FAQ</a>
-          <br>
+            <h1 id="facility" class="crdH1Style">The Facility</h1>
+            <p>Check our wide selection of rooms. Lorem ipsum this a test text. Check our wide selection of rooms. Lorem ipsum this a test text.</p>
+            <p>Our Facilities:</p>
 
-          <i class="fab fa-3x fa-twitter-square px-3 py-3"></i>
-          <i class="fab fa-3x fa-facebook px-3 py-3"></i>
-          <i class="fab fa-3x fa-foursquare px-3 py-3"></i>
-          <i class="fab fa-3x fa-instagram px-3 py-3"></i>
+            <div class="row">
+              <div class="col-sm-6 my-auto">
+                <p><i class="fas fa-3x fa-utensils px-3 py-1"></i>BBQ Area</p>
+                <p><i class="fas fa-3x fa-warehouse px-3 py-3"></i>Hall Rental</p>
+                <p><i class="fas fa-3x fa-swimming-pool px-3 py-3"></i>Swimming Pool</p>
+                <p><i class="fas fa-3x fa-wifi px-3 py-3"></i>Internet</p>
+              </div>
+
+              <div class="col-sm-6 my-auto">
+                <p><i class="fas fa-3x fa-hiking px-3 py-3"></i>Outdoor Activity</p>
+                <p><i class="fas fa-3x fa-mitten px-3 py-3"></i>Home Cook</p>
+                <p><i class="fas fa-3x fa-swimmer px-3 py-3"></i>Outdoor Swimming</p>
+                <p><i class="fas fa-3x fa-tree px-3 py-3"></i>Nature Guide</p>
+              </div>
+            </div>
 
 
-      <div class="row">
-        <hr class="style3">
-      </div>
+        <div class="row">
+          <hr class="style3">
+        </div>
 
 
-    </div><!-- end Contact Us container -->
+      </div><!-- end The facility container -->
+
+    </section>
+
+
+    <section class="">
+
+      <div class="container py-5">
+
+
+            <h1 id="direction" class="crdH1Style">The Way Here</h1>
+            <p>Below are our location, and some information on how to get here. Please do your reservation before hand for airfares and such.</p>
+
+            <div class="row">
+
+              <div class="col-sm-6 my-auto">
+                  <p class="crdFont1">Location:</p>
+                  <p>Long Lellang, Sarawak, Malaysia</p>
+                  <p>Flying Here:</p>
+                  <li>Fly to Kuala Lumpur international Airport (KLIA)</li>
+                  <li>Take a flight from KLIA to Miri Airport</li>
+                  <li>Another flight from Miri to Long Lellang</li>
+
+              </div><!-- end col-6 -->
+              <div class="col-sm-6 my-auto">
+
+                <a style="color: black;" href="#"><i class="fas fa-4x fa-map-marked-alt py-3 px-3"></i></a>
+                <a style="color: black;" href="#"><i class="fas fa-4x fa-map py-3 px-3"></i></a>
+                <a style="color:black;" href="#"><i class="fas fa-4x fa-street-view py-3 px-3"></i></a>
+
+
+              </div><!-- end col-6 -->
+
+            </div><!-- end row -->
+
+
+        <div class="row">
+          <hr class="style3">
+        </div>
+
+
+      </div><!-- end The way container -->
+
+    </section>
+
+
+    <section class="bg-info">
+
+      <div class="container-fluid py-5">
+
+        <h1 id="gallery" class="crdH1Style">The Promotion</h1>
+        <br>
+        <div class="col-md">
+
+          <a href="#"><img class="card-img lazyload teaser" data-expand data-src="{{info.promotion1.url}}" alt="Card image cap"></a>
+
+            <h2><u>Promotions</u></h2>
+            <h5>{{info.promotion}}</h5>
+            <hr class="style3">
+
+        </div>
+
+
+      </div><!-- end Promotion container -->
+
+    </section>
+
+
+    <section class="bg-danger">
+
+      <div class="container-fluid py-5">
+
+
+                <h1 id="gallery" class="crdH1Style">The Gallery</h1>
+                <p>Click to view</p>
+
+                        <div class="d-flex flex-row">
+                          <div class="col p-1">
+
+                            <a href="{{info.gallery1.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img data-src="{{info.gallery1.url}}" class="card-img lazyload teaser" data-expand="-50">
+                            </a>
+
+                          </div>
+                            <div class="col p-1">
+
+                            <a href="{{info.gallery2.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img data-src="{{info.gallery2.url}}" class="card-img lazyload teaser" data-expand="-50">
+                            </a>
+
+                            </div>
+                            <div class="col p-1">
+
+                            <a href="{{info.gallery3.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img data-src="{{info.gallery3.url}}" class="card-img lazyload teaser" data-expand="-50">
+                            </a>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex flex-row">
+
+                          <div class="col p-1">
+
+                          <a href="{{info.gallery4.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img data-src="{{info.gallery4.url}}" class="card-img lazyload teaser" data-expand="-50">
+                            </a>
+
+                          </div>
+                            <div class="col p-1">
+
+                            <a href="{{info.gallery5.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img data-src="{{info.gallery5.url}}" class="card-img lazyload teaser" data-expand="-50">
+                            </a>
+                            </div>
+                            <div class="col p-1">
+
+                            <a href="{{info.gallery6.url}}" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img data-src="{{info.gallery6.url}}" class="card-img lazyload teaser" data-expand="-50">
+                            </a>
+                            </div>
+                        </div>
+
+          <div class="row">
+            <hr class="style3">
+          </div>
+
+      </div><!-- end Gallery container -->
+
+    </section>
+
+
+    <section class="bg-warning pt-5 my-auto">
+
+      <div class="container">
+
+
+            <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
+
+            <div class="row pt-3">
+
+              <div class="col-md-6 my-auto">
+
+                <p><i class="fas fa-money-check-alt"></i> Name: {{info.name}}</p>
+                <p><i class="fas fa-phone"></i> Tel: {{info.phone_number}}</p>
+                <p><i class="fas fa-mobile-alt"></i> Tel: {{info.office_number}}</p>
+                <p><i class="fas fa-envelope"></i> Email: {{info.email}}</p>
+                <a href="#">FAQ</a>
+
+              </div><!-- end col-6 -->
+
+              <div class="col-md-6 my-auto text-center">
+
+                <i class="fab fa-3x fa-twitter-square px-3 py-3"></i>
+                <i class="fab fa-3x fa-facebook px-3 py-3"></i>
+                <i class="fab fa-3x fa-foursquare px-3 py-3"></i>
+                <i class="fab fa-3x fa-instagram px-3 py-3"></i>
+
+              </div><!-- end col-6 -->
+
+            </div><!-- end row -->
+
+
+        <div class="row">
+          <hr class="style3">
+        </div>
+
+
+      </div><!-- end Contact Us container -->
+
+    </section>
 
 {% endfor %}
 
@@ -287,29 +338,28 @@
     <!-- ======================================= end page content ============================================= -->
 
 
-        <footer class="text-center pt-3">
+        <footer class="text-center">
           <ul class="nav justify-content-center">
-            <li class="nav-item p-2 mb-1 bg-white rounded">
+            <li class="nav-item p-2 mb-1 rounded">
               <a class="nav-link" href="#"><i class="fab fa-black fa-facebook fa-3x"></i></a>
             </li>
-            <li class="nav-item p-2 mb-1 bg-white rounded">
+            <li class="nav-item p-2 mb-1 rounded">
               <a class="nav-link" href="#"><i class="fab fa-black fa-instagram fa-3x"></i></a>
             </li>
-            <li class="nav-item p-2 mb-1 bg-white rounded">
+            <li class="nav-item p-2 mb-1 rounded">
               <a class="nav-link" href="#"><i class="fab fa-black fa-twitter fa-3x"></i></a>
             </li>
           </ul>
-          <p class="my-1 footerFont">Copyright 2019</p>
+          <p class="footerFont">Copyright 2019</p>
           <h6 class="footerFont">Created by MADTechnologies</h6>
         </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script   src="https://code.jquery.com/jquery-3.4.0.min.js"   integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
     <script src="{% static "js/lazysizes.min.js" %}" async=""></script>
-
 
 
     <script>

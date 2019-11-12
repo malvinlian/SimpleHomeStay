@@ -28,6 +28,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   </head>
 
@@ -53,22 +54,22 @@
                 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'Room:Roompage' %}">About</a>
+            <a class="nav-link" href="{% url 'Room:Roompage' %}">Rooms</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Facilities</a>
+            <a class="nav-link" href="#facility">Facilities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Getting Here</a>
+            <a class="nav-link" href="#gettinghere">Getting Here</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Promotion</a>
+            <a class="nav-link" href="#promotion">Promotion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
+            <a class="nav-link" href="#contactus">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -96,11 +97,11 @@
       <div class="container pt-5">
 
 
-              <h1 id="room" class="crdH1Style text-center">Long Lellang</h1>
+              <h1 class="crdH1Style text-center">Long Lellang</h1>
 
             <div class="row">
 
-              <div class="col-md-5 my-auto">
+              <div data-aos="fade-up" class="col-md-5 my-auto">
                 <br>
                 <br>
                 <p>{{info.message1}}</p>
@@ -109,7 +110,7 @@
                 <a href="{% url 'Room:Roompage' %}" class="btn button black">View Our Rooms</a>
               </div>
 
-              <div class="col-md-7 crdFtStyle1 my-auto">
+              <div data-aos="fade-up" class="col-md-7 crdFtStyle1 my-auto">
                 <p style="letter-spacing: 0.7rem;">Click for gallery</p>
                 <a href="{{info.image1.url}}" data-toggle="lightbox" data-max-width="600" data-gallery="example-gallery">
                     <img data-src="{{info.image1.url}}" class="img-fluid lazyload">
@@ -129,24 +130,24 @@
     </section><!-- end section -->
 
 
-    <section class="bg-secondary" style="color: white;">
+    <section >
 
-      <div class="container pt-5">
+      <div id="facility" class="container pt-5">
 
 
-            <h1 id="facility" class="crdH1Style">The Facility</h1>
+            <h1 data-aos="fade-down" class="crdH1Style">The Facility</h1>
             <p>Check our wide selection of rooms. Lorem ipsum this a test text. Check our wide selection of rooms. Lorem ipsum this a test text.</p>
             <p>Our Facilities:</p>
 
             <div class="row">
-              <div class="col-sm-6 my-auto">
+              <div data-aos="fade-right" class="col-sm-6 my-auto">
                 <p><i class="fas fa-3x fa-utensils px-3 py-1"></i>BBQ Area</p>
                 <p><i class="fas fa-3x fa-warehouse px-3 py-3"></i>Hall Rental</p>
                 <p><i class="fas fa-3x fa-swimming-pool px-3 py-3"></i>Swimming Pool</p>
                 <p><i class="fas fa-3x fa-wifi px-3 py-3"></i>Internet</p>
               </div>
 
-              <div class="col-sm-6 my-auto">
+              <div data-aos="fade-left" class="col-sm-6 my-auto">
                 <p><i class="fas fa-3x fa-hiking px-3 py-3"></i>Outdoor Activity</p>
                 <p><i class="fas fa-3x fa-mitten px-3 py-3"></i>Home Cook</p>
                 <p><i class="fas fa-3x fa-swimmer px-3 py-3"></i>Outdoor Swimming</p>
@@ -167,15 +168,15 @@
 
     <section class="">
 
-      <div class="container py-5">
+      <div id="gettinghere" class="container py-5">
 
 
-            <h1 id="direction" class="crdH1Style">The Way Here</h1>
+            <h1 data-aos="fade-down" class="crdH1Style">The Way Here</h1>
             <p>Below are our location, and some information on how to get here. Please do your reservation before hand for airfares and such.</p>
 
             <div class="row">
 
-              <div class="col-sm-6 my-auto">
+              <div data-aos="fade-up" class="col-sm-6 my-auto">
                   <p class="crdFont1">Location:</p>
                   <p>Long Lellang, Sarawak, Malaysia</p>
                   <p>Flying Here:</p>
@@ -184,7 +185,7 @@
                   <li>Another flight from Miri to Long Lellang</li>
 
               </div><!-- end col-6 -->
-              <div class="col-sm-6 my-auto">
+              <div data-aos="fade-up" class="col-sm-6 my-auto">
 
                 <a style="color: black;" href="#"><i class="fas fa-4x fa-map-marked-alt py-3 px-3"></i></a>
                 <a style="color: black;" href="#"><i class="fas fa-4x fa-map py-3 px-3"></i></a>
@@ -206,11 +207,11 @@
     </section>
 
 
-    <section class="bg-info">
+    <section class="">
 
-      <div class="container-fluid py-5">
+      <div id="promotion" data-aos="fade-up" class="container py-5">
 
-        <h1 id="gallery" class="crdH1Style">The Promotion</h1>
+        <h1 data-aos="fade-down" class="crdH1Style">The Promotion</h1>
         <br>
         <div class="col-md">
 
@@ -228,12 +229,12 @@
     </section>
 
 
-    <section class="bg-danger">
+    <section class="">
 
-      <div class="container-fluid py-5">
+      <div id="gallery" data-aos="fade-up" class="container-fluid py-5">
 
 
-                <h1 id="gallery" class="crdH1Style">The Gallery</h1>
+                <h1 data-aos="fade-down" class="crdH1Style">The Gallery</h1>
                 <p>Click to view</p>
 
                         <div class="d-flex flex-row">
@@ -294,10 +295,10 @@
 
     <section class="bg-warning pt-5 my-auto">
 
-      <div class="container">
+      <div id="contactus" class="container">
 
 
-            <h1 id="contact" class="crdH1Style">WHO TO FIND TO BOOK</h1>
+            <h1 class="crdH1Style">Contact Us</h1>
 
             <div class="row pt-3">
 
@@ -360,8 +361,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
     <script src="{% static "js/lazysizes.min.js" %}" async=""></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
+    <script>
+      AOS.init();
+    </script>
+    
     <script>
 
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
@@ -369,6 +374,18 @@
                     $(this).ekkoLightbox();
                 });
 
+    </script>
+
+    <script>
+    $("a[href^='#']").click(function(e) {
+      e.preventDefault();
+      
+      var position = $($(this).attr("href")).offset().top;
+
+      $("body, html").animate({
+        scrollTop: position
+      } /* speed */ );
+    });
     </script>
 
     <!--

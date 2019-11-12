@@ -29,6 +29,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
   </head>
@@ -78,7 +79,7 @@
 
              <div class="row">
 
-               <div class="col-md-6">
+               <div data-aos="fade-up" class="col-md-6">
 
                  <h5 style="letter-spacing: 0.7rem; font-size: 25px; font-weight: lighter;">{{rooms.name}}</h5>
                  <hr class="style1">
@@ -86,7 +87,7 @@
                  <hr class="style1">
                </div><!-- end col-md-6 -->
 
-               <div class="col-md-6 my-auto">
+               <div data-aos="fade-up" class="col-md-6 my-auto">
 
                  <p class="card-text bg-info py-2 my-0" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); color: white;">1 ROOM - {{rooms.beds_number}} {{rooms.bed_type}}</p>
                  <ul class="list-group list-group-flush">
@@ -143,7 +144,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
     <script src="{% static 'js/lazysizes.min.js' %}" async=""></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+      AOS.init();
+    </script>
+    
     <script>
 
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
